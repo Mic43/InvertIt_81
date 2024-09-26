@@ -1,0 +1,267 @@
+﻿<controls:ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                             xmlns:attachedProperties="clr-namespace:NoNameGame.CustomControls.AttachedProperties"
+                             xmlns:configuration="clr-namespace:NoNameGame.Configuration"
+                             xmlns:controls="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                             xmlns:converters="clr-namespace:NoNameGame.Converters"
+                             xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+                             xmlns:noNameGame="clr-namespace:NoNameGame"
+                             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                             xmlns:popups="clr-namespace:NoNameGame.CustomControls.Popups"
+                             xmlns:shapes="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing"
+                             xmlns:system="clr-namespace:System;assembly=mscorlib"
+                             xmlns:system1="clr-namespace:System;assembly=System"
+                             xmlns:overlayAnimatedBackground="clr-namespace:NoNameGame.CustomControls.OverlayAnimatedBackground"
+                             xmlns:clickSound="clr-namespace:NoNameGame.CustomControls.ClickSound"
+                             xmlns:imageTools="clr-namespace:ImageTools;assembly=ImageTools">
+
+
+
+    <converters:OnOffConverter x:Key="OnOffConverter" />
+    <converters:ScallingConverter x:Key="ScallingConverter" />
+    <converters:PointsToHeaderConverter x:Key="PointsToHeaderConverter" />
+    <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    <converters:BoolToVisibilityConverterInverted x:Key="BoolToVisibilityConverterInverted" />
+    <converters:DoubleToIntConverter x:Key="DoubleToIntConverter" />
+
+
+
+    <noNameGame:LocalizedStrings x:Key="LocalizedStrings" />
+
+    <controls:Color x:Key="OverlayColor">#E1FFFFFF</controls:Color>
+    <controls:Color x:Key="CheckedAreaColor">#FF244DA4</controls:Color>
+    <controls:Color x:Key="UnCheckedAreaColor">#FF5C2114</controls:Color>
+    <controls:Color x:Key="ThirdAreaColor">#437019</controls:Color>
+    <controls:Color x:Key="MainBackgroundColor">#FF28420F</controls:Color>
+    <controls:Color x:Key="ButtonBackgroundColor">#FF72BD2B</controls:Color>
+    <controls:Color x:Key="ButtonPresedBackgroundColor">#99BD77</controls:Color>
+    <controls:Color x:Key="TextColor">#FF0F1E42</controls:Color>
+    <controls:Color x:Key="GameAreaBorderColor">#FF323232</controls:Color>
+
+   
+
+    <!--  <controls:FontFamily x:Key="CustomFontFamilyBellota">/Assets/Bellota-Regular.otf#Bellota</controls:FontFamily>  -->
+    <!--  <controls:FontFamily x:Key="CustomFontFamilyAleo">/Assets/Lato-Regular.ttf#Lato</controls:FontFamily>  -->
+    <!--  <controls:FontFamily x:Key="CustomFontFamilySintony">/Assets/Sintony-Regular.otf#Sintony</controls:FontFamily>  -->
+    <!--  <controls:FontFamily x:Key="CustomFontFamilyGinuolane">/Assets/gnuolane rg.ttf#gnuolane Rg</controls:FontFamily>  -->
+    <!--  <controls:FontFamily x:Key="CustomFontFamilyCircles">/Assets/Lumpbump.ttf#Lumpy bump</controls:FontFamily>  -->
+    <!--  <controls:FontFamily x:Key="CustomFontFamilyKharnorric">/Assets/Kharnorric.ttf#Kharnorric</controls:FontFamily>  -->
+    <!--  <controls:FontFamily x:Key="CustomFontFamilyBlacksmith">/Assets/Blacksmith Delight.ttf#Blacksmith Delight</controls:FontFamily>  -->
+    <!--  <controls:FontFamily x:Key="CustomFontFamilyDotty">/Assets/dotty.ttf#dotty</controls:FontFamily>  -->
+    <!--  <controls:FontFamily x:Key="CustomFontFamilyBallaha">/Assets/Balham.otf#Balham</controls:FontFamily>  -->
+    <!--  <controls:FontFamily x:Key="CustomFontFamilyManteka">/Assets/Manteka.ttf#Manteka</controls:FontFamily>  -->
+    <!--  <controls:FontFamily x:Key="CustomFontFamilyMyra">/Assets/Myra 4F Caps Regular.otf#Myra 4F Caps</controls:FontFamily>  -->
+
+    <controls:FontFamily x:Key="CustomFontFamilyLond">/Assets/LondrinaSolid-Regular.otf#Londrina Solid</controls:FontFamily>
+    <controls:FontFamily x:Key="CustomFontFamilyLondOut">/Assets/LondrinaShadow-Regular.otf#Londrina Shadow</controls:FontFamily>
+    <controls:FontFamily x:Key="CustomFontFamilyRobotoOut">/Assets/Roboto-Regular.ttf#Roboto</controls:FontFamily>
+
+
+    <controls:Style x:Key="CustomHeadline2Font" TargetType="TextBlock">
+        <controls:Setter Property="FontFamily" Value="{StaticResource CustomFontFamilyLondOut}" />
+    </controls:Style>
+
+    <controls:Style x:Key="CustomHeadline1Font" TargetType="TextBlock">
+        <controls:Setter Property="FontFamily" Value="{StaticResource CustomFontFamilyLond}" />
+    </controls:Style>
+
+    <controls:Style x:Key="CustomPanoramaItemStyle" TargetType="phone:PanoramaItem">
+        <controls:Setter Property="HeaderTemplate">
+            <controls:Setter.Value>
+                <controls:DataTemplate>
+                    <controls:TextBlock FontWeight="SemiBold"
+                                        Style="{StaticResource CustomHeadline2Font}"
+                                        Text="{Binding}" />
+                </controls:DataTemplate>
+            </controls:Setter.Value>
+        </controls:Setter>
+    </controls:Style>
+
+    <controls:Style x:Key="CustomPivotStyle" TargetType="phone:Pivot">
+        <controls:Setter Property="HeaderTemplate">
+            <controls:Setter.Value>
+                <controls:DataTemplate>
+                    <controls:TextBlock FontWeight="SemiBold"
+                                        Style="{StaticResource CustomHeadline2Font}"
+                                        Text="{Binding}" />
+                </controls:DataTemplate>
+            </controls:Setter.Value>
+
+        </controls:Setter>
+        <controls:Setter Property="TitleTemplate">
+            <controls:Setter.Value>
+                <controls:DataTemplate>
+                    <controls:TextBlock Style="{StaticResource CustomHeadline1Font}" Text="{Binding}" />
+                </controls:DataTemplate>
+            </controls:Setter.Value>
+
+        </controls:Setter>
+    </controls:Style>
+
+
+    <!--    -->
+    <!--  <controls:Style x:Key="PhoneTextLargeStyleCustom"  -->
+    <!--  BasedOn="{StaticResource PhoneTextLargeStyle}"  -->
+    <!--  TargetType="TextBlock">  -->
+    <!--  <controls:Setter Property="FontFamily" Value="{StaticResource CustomFontFamilyBellota}" />  -->
+    <!--    -->
+    <!--  </controls:Style>  -->
+
+    
+    <controls:BitmapImage x:Key="FastForwardBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/AppBar/fastforward.variant.png" />
+    <controls:BitmapImage x:Key="ResumeBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/AppBar/resume.png" />
+    <controls:BitmapImage x:Key="TilesBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/AppBar/tiles.nine.png" />
+    <controls:BitmapImage x:Key="RestartBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/AppBar/rotate.counterclockwise.png" />
+    <controls:BitmapImage x:Key="OkBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/AppBar/check.png" />
+    <controls:BitmapImage x:Key="CancelBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/AppBar/cancel.png" />
+    <controls:BitmapImage x:Key="ThemesBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/AppBar/themes_black_small.png" />
+
+
+    <controls:BitmapImage x:Key="LockedLightBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/lock_light.png" />
+    <controls:BitmapImage x:Key="LockedBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/lock.png" />
+    <controls:BitmapImage x:Key="StarBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/star-128.png" />
+    <controls:BitmapImage x:Key="PlayBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/play-icon_small.png" />
+    <controls:BitmapImage x:Key="GiftBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/gift-card.png" />
+    <controls:BitmapImage x:Key="CrossBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/cross-24-256.png" />
+
+    <controls:BitmapImage x:Key="TutorialBitmapImage"
+                          CreateOptions="BackgroundCreation"
+                          UriSource="../Resources/../Assets/tap3.gif" />
+
+
+    <controls:SolidColorBrush x:Key="ButtonSolidBackground" Color="Black" />
+    <controls:SolidColorBrush x:Key="ButtonTextBrush" Color="White" />
+    <controls:SolidColorBrush x:Key="ButtonPressed" Color="White" />
+
+    <controls:RadialGradientBrush x:Key="OverlayGradientBlue"
+                                  Center="0,0"
+                                  GradientOrigin="0.196,-0.171"
+                                  RadiusX="0.5"
+                                  RadiusY="0.5">
+        <controls:RadialGradientBrush.RelativeTransform>
+            <controls:CompositeTransform Rotation="0"
+                                         TranslateX="0.5"
+                                         TranslateY="0.5" />
+        </controls:RadialGradientBrush.RelativeTransform>
+        <controls:GradientStop Offset="0.13" Color="White" />
+        <controls:GradientStop Offset="0.415" Color="{StaticResource CheckedAreaColor}" />
+        <controls:GradientStop Offset="0.999" Color="#00000000" />
+    </controls:RadialGradientBrush>
+    <controls:RadialGradientBrush x:Key="OverlayGradientRed"
+                                  Center="0,0"
+                                  GradientOrigin="0.196,-0.171"
+                                  RadiusX="0.5"
+                                  RadiusY="0.5">
+        <controls:RadialGradientBrush.RelativeTransform>
+            <controls:CompositeTransform Rotation="0"
+                                         TranslateX="0.5"
+                                         TranslateY="0.5" />
+        </controls:RadialGradientBrush.RelativeTransform>
+        <controls:GradientStop Offset="0.13" Color="White" />
+        <controls:GradientStop Offset="0.415" Color="{StaticResource UnCheckedAreaColor}" />
+        <controls:GradientStop Offset="0.999" Color="#00000000" />
+    </controls:RadialGradientBrush>
+    <controls:RadialGradientBrush x:Key="OverlayGradientGreen"
+                                  Center="0,0"
+                                  GradientOrigin="0.196,-0.171"
+                                  RadiusX="0.5"
+                                  RadiusY="0.5">
+        <controls:RadialGradientBrush.RelativeTransform>
+            <controls:CompositeTransform Rotation="0"
+                                         TranslateX="0.5"
+                                         TranslateY="0.5" />
+        </controls:RadialGradientBrush.RelativeTransform>
+        <controls:GradientStop Offset="0.13" Color="White" />
+        <controls:GradientStop Offset="0.415" Color="{StaticResource ThirdAreaColor}" />
+        <controls:GradientStop Offset="0.999" Color="#00000000" />
+    </controls:RadialGradientBrush>
+    <system:String x:Key="ClickSoundPath">Resources\Sounds\click.wav</system:String>
+    <controls:Style x:Key="ClickSoundStyle" TargetType="clickSound:ClickSoundContentControl">
+        <controls:Setter Property="EffectFilePath" Value="{StaticResource ClickSoundPath}" />
+    </controls:Style>
+
+    <controls:Style TargetType="popups:PopupWindowBase">
+        <controls:Setter Property="Template">
+            <controls:Setter.Value>
+                <controls:ControlTemplate TargetType="popups:PopupWindowBase">
+
+                    <controls:Grid x:Name="LayoutRoot">
+                      
+                        <controls:Border 
+                            Background="White"                           
+                            BorderThickness="1"
+                                         CornerRadius="0"                                         
+                                         Opacity="1.0"                                        
+                                         >
+                            <!--  Background="{Binding Path=(controls:ThemeMainColorExtension.ThemeMainBrush), RelativeSource={RelativeSource TemplatedParent}}"  -->
+
+                            <controls:Grid>
+                                <controls:Grid.RowDefinitions>
+                                    <controls:RowDefinition Height="Auto" />                                    
+                                    <controls:RowDefinition Height="*" />
+                                </controls:Grid.RowDefinitions>
+
+                                <!--  Foreground="{Binding Path=(attachedProperties:ThemeMainColorExtension.ThemeMainBrush),  -->
+                                <!--  RelativeSource={RelativeSource TemplatedParent}}"  -->
+
+<!--                                <overlayAnimatedBackground:OverlayAnimatedBackgroundControl x:Name="Overlay" Opacity="0.4" Grid.Row="0"-->
+<!--                                                                                            Visibility="{Binding Path=ShowTitleAnimation,Converter={StaticResource BoolToVisibilityConverter},RelativeSource={RelativeSource TemplatedParent}}" />-->
+                                <controls:StackPanel Grid.Row="0" Background="{TemplateBinding HeaderBackgroundColor}"
+                                                     HorizontalAlignment="Stretch">
+
+                                    <!--                                                        FontWeight="Bold"-->
+<!--                                    <controls:StackPanel.Background>-->
+<!--                                        <SolidColorBrush Color="{Binding Path=(attachedProperties:ThemeAccentLightColorExtension.ThemeAccentLightColor)-->
+<!--                                                , RelativeSource={RelativeSource TemplatedParent}}">                                            -->
+<!--                                        </SolidColorBrush>                                        -->
+<!--                                    </controls:StackPanel.Background>-->
+                                    <controls:TextBlock Name="HeaderTextBlock"     
+                                                        Margin="2"
+                                                        VerticalAlignment="Center"
+                                                        HorizontalAlignment="Center"
+                                                        Foreground="Gray"                                                        
+                                                        FontSize="62"                                                        
+                                                        Style="{StaticResource CustomHeadline1Font}"
+                                                        Text="{TemplateBinding Header}"
+                                                        TextAlignment="Center" />
+                                </controls:StackPanel>
+
+                                <controls:ContentPresenter Grid.Row="1" Margin="6" />
+                            </controls:Grid>
+                        </controls:Border>
+                    </controls:Grid>
+                </controls:ControlTemplate>
+
+            </controls:Setter.Value>
+        </controls:Setter>
+    </controls:Style>    
+
+    <controls:Storyboard x:Key="PulseAnimation" />
+
+</controls:ResourceDictionary>

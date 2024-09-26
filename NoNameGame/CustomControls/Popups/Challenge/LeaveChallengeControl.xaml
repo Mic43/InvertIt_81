@@ -1,0 +1,60 @@
+﻿<UserControl xmlns:controls="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"  x:Class="NoNameGame.CustomControls.Popups.Challenge.LeaveChallengeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:NoNameGame"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:popups="clr-namespace:NoNameGame.CustomControls.Popups"
+             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+             xmlns:clickSound="clr-namespace:NoNameGame.CustomControls.ClickSound"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}"
+             mc:Ignorable="d" MinWidth="360" MaxWidth=" 400">
+
+    <popups:PopupWindowBase Name="PopupWindowBase"                             
+                            Header="LEAVE?">
+
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"                    
+                    Orientation="Vertical">
+
+            <TextBlock Name="MessageText" Margin="12,12,12,12"    Height="Auto"                  
+                           Foreground="Gray"
+                       Text="Are You sure You want to leave the challenge? You wonn't be able to take it again!"
+                           FontSize="22"                      
+                           TextWrapping="Wrap">
+            </TextBlock>
+
+            <StackPanel HorizontalAlignment="Center" Margin="0,12,0,12"
+                    VerticalAlignment="Bottom"                    
+                    Orientation="Horizontal">
+                <clickSound:ClickSoundContentControl HorizontalContentAlignment="Stretch"
+                                                     Style="{StaticResource ClickSoundStyle}">
+                    <controls:RoundButton ButtonHeight="90" ButtonWidth="90"
+                                          x:Name="OkButton" toolkit:TiltEffect.IsTiltEnabled="True"
+                                          Style="{StaticResource RoundButtonStyleDynamicThemes}"
+                                          ImageSource="../../../Assets/AppBar/check.png">
+
+                    </controls:RoundButton>
+
+                </clickSound:ClickSoundContentControl>
+
+                <clickSound:ClickSoundContentControl
+                    HorizontalContentAlignment="Stretch" Style="{StaticResource ClickSoundStyle}">
+                    <controls:RoundButton ButtonHeight="90" ButtonWidth="90"
+                                          Style="{StaticResource RoundButtonStyleDynamicThemes}"
+
+                                          x:Name="CancelButton" toolkit:TiltEffect.IsTiltEnabled="True"
+                                          ImageSource="../../../Assets/AppBar/cancel.png">
+                    </controls:RoundButton>
+                </clickSound:ClickSoundContentControl>
+            </StackPanel>
+        </StackPanel>
+
+    </popups:PopupWindowBase>
+
+</UserControl>

@@ -1,0 +1,107 @@
+﻿<noNameGame:BasePage
+    x:Class="NoNameGame.PurchaseHintsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+    xmlns:noNameGame="clr-namespace:NoNameGame"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:overlayAnimatedBackground="clr-namespace:NoNameGame.CustomControls.OverlayAnimatedBackground"
+    xmlns:controls="clr-namespace:NoNameGame.CustomControls.AttachedProperties"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False"
+toolkit:TiltEffect.IsTiltEnabled="True"
+    >
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardIn" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileFeatherTransition Mode="ForwardIn" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileFeatherTransition Mode="ForwardOut" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <overlayAnimatedBackground:OverlayAnimatedBackgroundControl x:Name="Overlay" />
+        <Grid Canvas.ZIndex="1000">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+
+            <Grid.Background>
+                <SolidColorBrush Color="{StaticResource OverlayColor}" />
+            </Grid.Background>
+
+            <!--  TitlePanel contains the name of the application and page title  -->
+            <StackPanel Grid.Row="0" Margin="12,17,0,28"  toolkit:TurnstileFeatherEffect.FeatheringIndex="0">
+                <customControls:GameTitleControl />
+                <TextBlock Margin="9,-7,0,0"
+                           FontFamily="{StaticResource CustomFontFamilyLondOut}"
+                           FontWeight="Bold"
+                           Style="{StaticResource PhoneTextTitle1Style}"                           
+                           Text="{Binding Path=LocalizedResources.PurchaseHintsPage_Title, Source={StaticResource LocalizedStrings}}" />
+<!--                <Button Click="ButtonBase_OnClick"></Button>-->
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" HorizontalAlignment="Stretch" Orientation="Vertical">             
+                <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="{StaticResource PhoneSubtleBrush}"
+                                       Text="{Binding Path=LocalizedResources.PuchaseHints_HintsCount_Description1, Source={StaticResource LocalizedStrings}}"
+                                       toolkit:TurnstileFeatherEffect.FeatheringIndex="1" />   
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"
+                             toolkit:TurnstileFeatherEffect.FeatheringIndex="2"
+                            >                    
+                        <TextBlock Name="HintsCountTextBlock" Text="0"  FontSize="40"> </TextBlock>
+                         <TextBlock Text="{Binding Path=LocalizedResources.PuchaseHints_HintsCount_Description2, Source={StaticResource LocalizedStrings}}"  Foreground="{StaticResource PhoneSubtleBrush}" VerticalAlignment="Center"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+            <!--ContentPanel - place additional content here-->
+            <StackPanel Grid.Row="2" Orientation="Vertical"  toolkit:TurnstileFeatherEffect.FeatheringIndex="3">                
+                <customControls:PurchaseHintsControl Margin="12,12,12,0" Loaded="PurchaseHintsControl_OnLoaded"
+                                                      x:Name="PurchaseHintsControl"/>
+                
+            </StackPanel>
+            
+
+            <TextBlock  toolkit:TurnstileFeatherEffect.FeatheringIndex="4" TextWrapping="Wrap"
+                Grid.Row="3" VerticalAlignment="Center" Name="AdsTextBlock" Text="{Binding Path=LocalizedResources.PurchaseHintsPage_AdsHint, Source={StaticResource LocalizedStrings}}"
+                       FontSize="24"                            FontWeight="Bold" TextAlignment="Center"
+                                                                 Foreground="{Binding ElementName=AdsTextBlock,
+                                                        Path=(controls:ThemeMainColorExtension.ThemeMainBrush)}"
+
+                           HorizontalAlignment="Center"></TextBlock>
+
+
+            
+
+        </Grid>
+<!--        <ProgressBar Canvas.ZIndex="1001" Visibility="Visible"  Height="50" HorizontalAlignment="Stretch" Name="ProgressBar" IsIndeterminate="True" Style="{StaticResource ProgressBarDynamicThemes}"></ProgressBar>-->
+    </Grid>
+
+</noNameGame:BasePage>

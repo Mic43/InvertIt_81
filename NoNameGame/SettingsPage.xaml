@@ -1,0 +1,75 @@
+﻿<noNameGame:BasePage x:Class="NoNameGame.SettingsPage"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:noNameGame="clr-namespace:NoNameGame"
+                     xmlns:overlayAnimatedBackground="clr-namespace:NoNameGame.CustomControls.OverlayAnimatedBackground"
+                     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                     FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                     FontSize="{StaticResource PhoneFontSizeNormal}"
+                     Foreground="{StaticResource PhoneForegroundBrush}"
+                     Loaded="SettingsPage_OnLoaded"
+                     Orientation="Portrait"
+                     SupportedOrientations="Portrait"
+                     shell:SystemTray.IsVisible="False"
+                     toolkit:TiltEffect.IsTiltEnabled="True"
+                     mc:Ignorable="d">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardIn" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileFeatherTransition Mode="ForwardIn" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileFeatherTransition Mode="ForwardOut" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <Grid x:Name="LayoutRoot">
+        <overlayAnimatedBackground:OverlayAnimatedBackgroundControl x:Name="Overlay" />
+        <Grid Canvas.ZIndex="1000">
+            <Grid.Background>
+                <SolidColorBrush Color="{StaticResource OverlayColor}" />
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--  TitlePanel contains the name of the application and page title  -->
+            <StackPanel Grid.Row="0"
+                        Margin="12,17,0,28"
+                        toolkit:TurnstileFeatherEffect.FeatheringIndex="0">
+                <customControls:GameTitleControl />
+                <TextBlock Margin="9,-7,0,0"
+                           FontFamily="{StaticResource CustomFontFamilyLondOut}"
+                           FontWeight="SemiBold"
+                           Style="{StaticResource PhoneTextTitle1Style}"
+                           Text="{Binding Path=LocalizedResources.SettingsPage_Title,
+                                          Source={StaticResource LocalizedStrings}}" />
+            </StackPanel>
+
+            <!--  ContentPanel - place additional content here  -->
+            <Grid x:Name="ContentPanel"
+                  Grid.Row="1"
+                  Margin="12,0,12,0">
+                <customControls:SettingsControl Name="SettingsControl" toolkit:TurnstileFeatherEffect.FeatheringIndex="1" />
+            </Grid>
+        </Grid>
+    </Grid>
+
+</noNameGame:BasePage>

@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="NoNameGame.CustomControls.NewAchievements.SingleAchievementControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="180" d:DesignWidth="300">
+
+    <Grid Name="RootGrid">
+
+        <Grid Name="UnlockedGrid"         Visibility="{Binding Path=IsUnlocked, Converter={StaticResource BoolToVisibilityConverter}}"> 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Margin="0,0,9,0" Stretch="None"
+                   Grid.Column="0" Grid.Row="0" Source="{Binding ImageSource}"
+                   Grid.RowSpan="3">                    
+            </Image>
+            <TextBlock Grid.Row="0" FontSize="{StaticResource PhoneFontSizeLarge}" Grid.Column="1" Text="{Binding Name}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Description}" TextWrapping="Wrap"></TextBlock>
+            <TextBlock Style="{StaticResource PhoneTextSubtleStyle}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Text="{Binding UnlockDate, StringFormat=d}"></TextBlock>
+
+        </Grid>
+
+
+        <Grid Name="LockedGrid" Visibility="{Binding Path=IsUnlocked, Converter={StaticResource BoolToVisibilityConverterInverted}}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="{StaticResource LockedLightBitmapImage}" 
+                   Stretch="Uniform" Width="60" Height="60" Margin="0,0,9,0"
+                   Grid.Column="0" Grid.Row="0"
+                   Grid.RowSpan="3"></Image>
+            
+            <TextBlock Grid.Row="0" FontSize="{StaticResource PhoneFontSizeLarge}" Grid.Column="1" Text="{Binding Name}"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Description}" TextWrapping="Wrap"></TextBlock>
+            <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right">
+                <TextBlock Style="{StaticResource PhoneTextSubtleStyle}"
+                    Visibility="{Binding Path=IsSingleStep, Converter={StaticResource BoolToVisibilityConverterInverted}}">
+                    <TextBlock.Inlines>
+                        <Run Text="{Binding CurrentProgress}" ></Run>
+                        <Run Text="/"></Run>
+                        <Run Text="{Binding GoalProgress}"></Run>
+                    </TextBlock.Inlines>
+                </TextBlock>
+                <TextBlock Text="{Binding Path=LocalizedResources.SingleAchievemenControl_TextBlock_Incomplete, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextSubtleStyle}"
+                           Visibility="{Binding Path=IsSingleStep, Converter={StaticResource BoolToVisibilityConverter}}">
+                </TextBlock>
+                </StackPanel>
+
+        </Grid>
+  
+
+<!--        <Border Margin ="0,2,0,2" Background="{StaticResource  PhoneChromeBrush}">-->
+<!--        <StackPanel Orientation="Vertical">-->
+<!--            <TextBlock Text="{Binding Name}"></TextBlock>-->
+<!--            <TextBlock Text="{Binding Description}"></TextBlock>-->
+<!--            <TextBlock Text="{Binding Path=IsUnlocked, StringFormat='IsUnlocked: {0}' }"></TextBlock>-->
+<!--            <TextBlock Text="{Binding UnlockDate}"></TextBlock>-->
+<!--            <TextBlock>-->
+<!--                <TextBlock.Inlines>-->
+<!--                    <Run Text="{Binding CurrentProgress}"></Run>-->
+<!--                    <Run Text="/"></Run>-->
+<!--                    <Run Text="{Binding GoalProgress}"></Run>-->
+<!--                </TextBlock.Inlines>-->
+<!--            </TextBlock>-->
+<!--        </StackPanel>-->
+<!--    </Border>-->
+    </Grid>
+</UserControl>

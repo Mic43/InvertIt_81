@@ -1,0 +1,36 @@
+﻿<Application x:Class="NoNameGame.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:configuration="clr-namespace:NoNameGame.Configuration"
+             xmlns:helpers="clr-namespace:NoNameGame.Helpers"
+             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+             xmlns:s="clr-namespace:NoNameGame;assembly=NoNameGame"
+             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
+
+
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Name="Generic" Source="Themes/Generic.xaml" />
+                <ResourceDictionary Source="Themes/ThemeControls.xaml" />
+                <ResourceDictionary x:Name="ThemeDictionary">
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary />
+                        <!--  <ResourceDictionary Source="Themes/GreenOrange.xaml" />  -->
+                    </ResourceDictionary.MergedDictionaries>
+
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+
+    <Application.ApplicationLifetimeObjects>
+        <helpers:XNAFrameworkDispatcherService />
+        <!--  Required object that handles lifetime events for the application  -->
+        <shell:PhoneApplicationService Activated="Application_Activated" Deactivated="Application_Deactivated"  Launching="Application_Launching"/>
+    </Application.ApplicationLifetimeObjects>
+
+</Application>

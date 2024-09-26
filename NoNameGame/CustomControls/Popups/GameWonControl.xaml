@@ -1,0 +1,172 @@
+﻿<UserControl x:Class="NoNameGame.CustomControls.Popups.GameWonControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:NoNameGame.CustomControls.AttachedProperties"
+             xmlns:converters="clr-namespace:NoNameGame.Converters"
+             xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:NoNameGame"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:popups="clr-namespace:NoNameGame.CustomControls.Popups"
+             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+             xmlns:overlayAnimatedBackground="clr-namespace:NoNameGame.CustomControls.OverlayAnimatedBackground"
+             xmlns:clickSound="clr-namespace:NoNameGame.CustomControls.ClickSound"
+             xmlns:controls1="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+             x:Name="UserControl"
+             MinWidth="400"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <Storyboard x:Name="FadeAnimation">
+            <DoubleAnimation AutoReverse="True"
+                             Duration="0:0:0.500"
+                             From="1.0"
+                             RepeatBehavior="Forever"
+                             Storyboard.TargetName="NewItemUnlockedTextBox"
+                             Storyboard.TargetProperty="Opacity"
+                             To="0.5" />
+        </Storyboard>
+    </UserControl.Resources>
+
+    <popups:PopupWindowBase Header="{Binding Path=IsPerfect, Converter={StaticResource PointsToHeaderConverter}}" ShowTitleAnimation="True">
+                  
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0"
+                                Margin="0,20,0,0"
+                                HorizontalAlignment="Center"
+                                Orientation="Horizontal">
+                        <TextBlock FontSize="22" Loaded="FrameworkElement_OnLoaded"
+                                   Foreground="Gray"
+                                   Style="{StaticResource PhoneTextSmallStyle}"
+                                   TextAlignment="Left"
+                                   Text="{Binding Path=MovesCountCaption}">
+                            <!--                        <Run  Text="{Binding Path=LocalizedResources.GameWonControl_MovesDescriptionTextBlock, Source={StaticResource LocalizedStrings}}"  />-->
+                            <!--                        <Run Text="{Binding Path=MovesCount}" />-->
+                            <!--                        <Run Text="{Binding Path=MovesCountCaption,StringFormat='{0}.'}"/>                        -->
+                        </TextBlock>
+                        <!--                    <TextBlock Text="{Binding Path=MovesCount}" -->
+                        <!--                        FontSize="22" HorizontalAlignment="Left"-->
+                        <!--                               Foreground="{StaticResource PhoneForegroundBrush}"-->
+                        <!--                               Style="{StaticResource PhoneTextSmallStyle}"-->
+                        <!--                               TextAlignment="Left"/>-->
+                        <!--                    <TextBlock Text="{Binding Path=MovesCountCaption}" -->
+                        <!--                        FontSize="22"-->
+                        <!--                               Foreground="{StaticResource PhoneForegroundBrush}"-->
+                        <!--                               Style="{StaticResource PhoneTextSmallStyle}"-->
+                        <!--                               TextAlignment="Left"/>-->
+                        <!--  <TextBlock Margin="20,20,0,0" FontFamily="Segoe WP Semibold">Points:</TextBlock>  -->
+                        <!--  <TextBlock Name="PointsValueTextBlock" Margin="10,20,0,0" FontFamily="Segoe WP Semibold"  -->
+                        <!--  Text="{Binding ElementName=UserControl,Path=Points}" ></TextBlock>  -->
+                    </StackPanel>
+
+
+                    <customControls:StarsControl Grid.Row="1"
+                                                 Height="105"
+                                                 Margin="0,28,0,34"
+                                                 HorizontalAlignment="Center"
+                                                 ShowAnimation="True"
+                                                 StarsCount="{Binding Path=Points}" />
+                    <StackPanel Name="NewItemUnlockedPanel"
+                                Grid.Row="2"
+                                Margin="0,0,0,24"
+                                HorizontalAlignment="Stretch"
+                                Orientation="Vertical"
+                                Visibility="{Binding Path=NewItemUnlocked,
+                                                 Converter={StaticResource BoolToVisibilityConverter}}">
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+
+                            <TextBlock Name="NewItemUnlockedTextBox"
+                                       Margin="0,0,0,0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="24"
+                                       FontWeight="Bold"
+                                       Foreground="{Binding ElementName=NewItemUnlockedTextBox,
+                                                        Path=(controls:ThemeMainColorExtension.ThemeMainBrush)}"
+                                       Loaded="NewItemUnlockedTextBox_OnLoaded"
+                                       Text="{Binding Path=LocalizedResources.GameWonPopup_NewItemUnlocked,
+                                                  Source={StaticResource LocalizedStrings}}"
+                                       TextAlignment="Center" />
+                            <!--  <Image Margin="12,0,0,0"  -->
+                            <!--  HorizontalAlignment="Center"  -->
+                            <!--  Opacity="0"  -->
+                            <!--  Source="../../Assets/trophy.png"  -->
+                            <!--  Stretch="None" />  -->
+                        </StackPanel>
+                        <!--  <Button Content="Try it!"></Button>  -->
+                    </StackPanel>
+
+
+                </Grid>
+            <StackPanel Grid.Row="1" Margin="0,0,0,6"
+                            VerticalAlignment="Center" HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+               
+             
+
+              
+
+                <clickSound:ClickSoundContentControl HorizontalContentAlignment="Stretch"
+                                                             Style="{StaticResource ClickSoundStyle}">
+
+                    <controls1:RoundButton ButtonHeight="90" ButtonWidth="90" Style="{StaticResource RoundButtonStyleDynamicThemes}"
+                                      x:Name="RestartButto" toolkit:TiltEffect.IsTiltEnabled="True"                       
+                                       ImageSource="{StaticResource RestartBitmapImage}">
+                    </controls1:RoundButton>
+
+                </clickSound:ClickSoundContentControl>
+
+
+                <clickSound:ClickSoundContentControl HorizontalContentAlignment="Stretch"
+                                                             Style="{StaticResource ClickSoundStyle}">
+                    <controls1:RoundButton ButtonHeight="90" ButtonWidth="90" Style="{StaticResource RoundButtonStyleDynamicThemes}"
+                                      x:Name="LevelsButton" toolkit:TiltEffect.IsTiltEnabled="True"
+                                      Visibility="{Binding Path=CanStartNextLevel,
+                                                 Converter={StaticResource BoolToVisibilityConverterInverted}}"
+                                       ImageSource="{StaticResource TilesBitmapImage}">
+                    </controls1:RoundButton>
+                </clickSound:ClickSoundContentControl>
+
+                <clickSound:ClickSoundContentControl HorizontalContentAlignment="Stretch"
+                                                     Margin="-6,20,-6,0"
+                                                             Style="{StaticResource ClickSoundStyle}">
+
+                    <controls1:RoundButton ButtonHeight="90" ButtonWidth="90" Style="{StaticResource RoundButtonStyleDynamicThemes}"
+                                      x:Name="NextLevelButton" toolkit:TiltEffect.IsTiltEnabled="True"                                           
+                                      Visibility="{Binding Path=CanStartNextLevel,
+                                                 Converter={StaticResource BoolToVisibilityConverter}}"
+                                       ImageSource="{StaticResource FastForwardBitmapImage}">
+                        
+                    </controls1:RoundButton>
+
+                </clickSound:ClickSoundContentControl>
+
+                <clickSound:ClickSoundContentControl HorizontalContentAlignment="Stretch"
+                                                             Style="{StaticResource ClickSoundStyle}">
+
+                    <controls1:RoundButton ButtonHeight="90" ButtonWidth="90" Style="{StaticResource RoundButtonStyleDynamicThemes}"
+                                      x:Name="ThemesButton" toolkit:TiltEffect.IsTiltEnabled="True"
+                                       ImageSource="{StaticResource ThemesBitmapImage}">
+                    </controls1:RoundButton>
+
+                </clickSound:ClickSoundContentControl>
+
+            </StackPanel>
+        </Grid>
+    </popups:PopupWindowBase>
+
+</UserControl>

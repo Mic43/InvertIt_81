@@ -1,0 +1,56 @@
+﻿<UserControl x:Class="NoNameGame.CustomControls.Stats.StarsProgressBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Name="UserControl"
+             Height="30"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}"
+             d:DesignWidth="480"
+             mc:Ignorable="d">
+
+    <Grid HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock Margin="0,-4,4,0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   Style="{StaticResource PhoneTextLargeStyle}"
+                   Text="{Binding Path=CurrentStarsCount
+                                  }" />
+
+        <customControls:StarsControl Name="StarsControl"
+                                     Grid.Column="1"
+                                     HorizontalAlignment="Right"
+                                     Height="{Binding ElementName=UserControl,
+                                                      Path=Height}"
+                                     StarsCount="1" />
+
+        <ProgressBar Name="ProgressBar"
+                     Grid.Column="2"
+                     Height="{Binding ElementName=StarsControl,
+                                      Path=Height}"
+                     MinWidth="120"
+                     Margin="-4"
+                     Background="{StaticResource PhoneChromeBrush}"
+                     BorderThickness="0"
+                     Maximum="{Binding Path=AllStarsCount}"
+                     Style="{StaticResource ProgressBarDynamicThemes}"
+                     Value="{Binding Path=CurrentStarsCount}">
+            <ProgressBar.Foreground>
+                <SolidColorBrush Color="{Binding Source={StaticResource GameResourcesProvider}, Path=GameResources.UnCheckedColor}" />
+            </ProgressBar.Foreground>
+            <ProgressBar.BorderBrush>
+                <SolidColorBrush Color="{StaticResource PhoneChromeColor}" />
+            </ProgressBar.BorderBrush>
+        </ProgressBar>
+    </Grid>
+</UserControl>

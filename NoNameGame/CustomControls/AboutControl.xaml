@@ -1,0 +1,142 @@
+﻿<UserControl x:Class="NoNameGame.CustomControls.AboutControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+             xmlns:clickSound="clr-namespace:NoNameGame.CustomControls.ClickSound"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}"
+             d:DesignHeight="800"
+             d:DesignWidth="480"
+             mc:Ignorable="d">
+
+    <StackPanel Margin="12,0,0,0">
+        <customControls:GameTitleControl Margin="-12,0,0,0" />
+              <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Margin="0,6,0,0">
+               <Run Text="{Binding Path=LocalizedResources.About_VersionTextBlock, Source={StaticResource LocalizedStrings}}" />
+              <Run Text="1.5" />
+            </TextBlock>
+            <HyperlinkButton Grid.Row="1" Name="FeedbackButton"
+                             Margin="-12,6,0,0"
+                             HorizontalAlignment="Left"
+                             Click="FeedbackButton_OnClick"
+                             Content="{Binding Path=LocalizedResources.About_FeedbackButton,
+                                           Source={StaticResource LocalizedStrings}}"
+                             Style="{StaticResource HyperlinkButtonDynamicThemes}" />
+            <clickSound:ClickSoundContentControl HorizontalAlignment="Right"
+                Grid.Column="1" Grid.RowSpan="3">
+                <Button Content="{Binding Path=LocalizedResources.AboutPage_CreditsButton, Source={StaticResource LocalizedStrings}}"
+        			toolkit:TiltEffect.IsTiltEnabled="True"
+        			x:Name ="CreditsButton"                       
+        			Click="ButtonBase_OnClick"/>
+            </clickSound:ClickSoundContentControl>
+
+            <StackPanel  Grid.Row="2"  Orientation="Horizontal">
+
+                <HyperlinkButton x:Name="LikeButton"
+        		Margin="-12,6,0,0"
+        		HorizontalAlignment="Left"
+        		Click="LikeButton_OnClick"
+        		Content="{Binding LocalizedResources.AboutPage_LikeUsButton, Source={StaticResource LocalizedStrings}}"
+        		Style="{StaticResource HyperlinkButtonDynamicThemes}" />
+                <Image Source="../../Assets/FB-ThumbsUp_29.png" Name="LikefbImage" Stretch="None"/>
+
+
+            </StackPanel>
+        </Grid>
+      
+        <TextBlock Margin="0,16,0,6"
+                   Style="{StaticResource PhoneTextTitle3Style}"
+                   Text="{Binding Path=LocalizedResources.AboutPage_TextBlockRate,
+                                  Source={StaticResource LocalizedStrings}}" />
+        <clickSound:ClickSoundContentControl Margin="0,0,6,24" HorizontalAlignment="Left">
+            <Button Name="RateButton" Click="RateButton_OnClick">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Border HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Width="100"
+                                   Height="100"
+                                   HorizontalAlignment="Center"
+                                   Source="/Assets/star.png"
+                                   Stretch="Fill" />
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </clickSound:ClickSoundContentControl>
+        <TextBlock Margin="0,-12,0,0"
+                   Style="{StaticResource PhoneTextTitle3Style}"
+                   Text="{Binding Path=LocalizedResources.AboutPage_TextBlock_Share,
+                                  Source={StaticResource LocalizedStrings}}" />
+        <StackPanel Margin="0,6,0,0"
+                    HorizontalAlignment="LEft"
+                    VerticalAlignment="Top"
+                    Orientation="Horizontal">
+            <clickSound:ClickSoundContentControl Margin="0,0,6,0">
+                <Button x:Name="ShareTwitButton" Click="ShareTwitButton_OnClick">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Width="100"
+                                       Height="100"
+                                       HorizontalAlignment="Center"
+                                       Source="/Assets/twit.png"
+                                       Stretch="Fill" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </clickSound:ClickSoundContentControl>
+            <clickSound:ClickSoundContentControl Margin="0,0,6,0">
+                <Button Click="ShareTwitButton_OnClick">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Width="100"
+                                       Height="100"
+                                       HorizontalAlignment="Center"
+                                       Source="/Assets/fb.png"
+                                       Stretch="Fill" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </clickSound:ClickSoundContentControl>
+
+            <clickSound:ClickSoundContentControl>
+                <Button Name="MailShareButton"
+                        Margin="0,0,6,0"
+                        Click="MailShareButton_OnClick">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Width="100"
+                                       Height="100"
+                                       HorizontalAlignment="Center"
+                                       Source="/Assets/mail.png"
+                                       Stretch="Fill" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </clickSound:ClickSoundContentControl>
+<!--            <Button Click="ButtonBase_OnClick2"> CHUJ</Button>-->
+        </StackPanel>
+    </StackPanel>
+
+</UserControl>

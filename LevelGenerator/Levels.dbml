@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LevelsData" Class="LevelsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\Projects;Initial Catalog=LevelsData;Integrated Security=True;Connect Timeout=30" SettingsObjectName="LevelGenerator.Properties.Settings" SettingsPropertyName="LevelsDataConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[Level]" Member="Levels">
+    <Type Name="Level">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MovesCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Difficulty" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DistancesSum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Moves" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="IsUsed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MobileLevelId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NewDifficulty" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="DisbaledAreasId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BoardSize" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

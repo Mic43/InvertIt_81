@@ -1,0 +1,633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>es</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="SettingsPage_Title" xml:space="preserve">
+    <value>configuración</value>
+  </data>
+  <data name="UnlocksPage_Title" xml:space="preserve">
+    <value>DESBLOQUEOS</value>
+  </data>
+  <data name="ThemesPivotItem_Title" xml:space="preserve">
+    <value>temas</value>
+  </data>
+  <data name="AnimationsPivotItem_Title" xml:space="preserve">
+    <value>animaciones</value>
+  </data>
+  <data name="ThemesPage_Description" xml:space="preserve">
+    <value>¡seleccione sus colores favoritos!</value>
+  </data>
+  <data name="AnimationsPage_Description" xml:space="preserve">
+    <value>seleccione una animación periodica en el juego</value>
+  </data>
+  <data name="MainPage_NewGame_Title" xml:space="preserve">
+    <value>nueva partida</value>
+  </data>
+  <data name="MainPage_Dashboard_Title" xml:space="preserve">
+    <value>tablero</value>
+  </data>
+  <data name="MainPage_About_Title" xml:space="preserve">
+    <value>a cerca de</value>
+  </data>
+  <data name="GamePage_LevelTextBlock" xml:space="preserve">
+    <value>NIVEL </value>
+  </data>
+  <data name="GamePage_MovesTextBlock" xml:space="preserve">
+    <value>movimientos: </value>
+  </data>
+  <data name="GamePage_PerfectTextBlock" xml:space="preserve">
+    <value>perfecto: </value>
+  </data>
+  <data name="MainPage_GoaltextBlock" xml:space="preserve">
+    <value>meta:</value>
+  </data>
+  <data name="GamePage_AppBar_Undo" xml:space="preserve">
+    <value>deshacer</value>
+  </data>
+  <data name="GamePage_AppBar_Redo" xml:space="preserve">
+    <value>rehacer</value>
+  </data>
+  <data name="SettingPage_SoundSwitch_Header" xml:space="preserve">
+    <value>Sonido</value>
+  </data>
+  <data name="SettingsPage_SoundVolumeTextBlock" xml:space="preserve">
+    <value>Volumen principal</value>
+  </data>
+  <data name="SettingsPage_VibrationSwitch_Header" xml:space="preserve">
+    <value>Vibración</value>
+  </data>
+  <data name="SettingsPage_ResetProgressButton_Content" xml:space="preserve">
+    <value>reinicializar progreso</value>
+  </data>
+  <data name="GameWonPopup_NewItemUnlocked" xml:space="preserve">
+    <value>¡Nuevo tema desbloqueado!</value>
+  </data>
+  <data name="GameWonPopup_NextLevelButton" xml:space="preserve">
+    <value>Siguiente nivel</value>
+  </data>
+  <data name="GameWonPopup_RestartLevelButton" xml:space="preserve">
+    <value>Reiniciar nivel</value>
+  </data>
+  <data name="About_FeedbackButton" xml:space="preserve">
+    <value>Envíe comentarios</value>
+  </data>
+  <data name="HelpPage_Title" xml:space="preserve">
+    <value>ayuda</value>
+  </data>
+  <data name="Tutorial_Page1_Text2" xml:space="preserve">
+    <value>en el punto para invertir sus vecinos.</value>
+  </data>
+  <data name="AboutPage_TextBlockRate" xml:space="preserve">
+    <value>calificar:</value>
+  </data>
+  <data name="AboutPage_TextBlock_Share" xml:space="preserve">
+    <value>compartir:</value>
+  </data>
+  <data name="AboutPage_ShareTaskTitle" xml:space="preserve">
+    <value>Echa un vistazo a {0} para Windows Phone!</value>
+  </data>
+  <data name="AboutPage_SendFeedback_EmailTitle" xml:space="preserve">
+    <value>Comentar sobre el Juego</value>
+  </data>
+  <data name="Tutorial_Page1_Text1" xml:space="preserve">
+    <value>Pulse</value>
+  </data>
+  <data name="ThemesPage_Title" xml:space="preserve">
+    <value>temas</value>
+  </data>
+  <data name="GamePage_ResetMenuItem_Text" xml:space="preserve">
+    <value>reanudar</value>
+  </data>
+  <data name="DashboardList_ThemesTitle" xml:space="preserve">
+    <value>temas</value>
+  </data>
+  <data name="DashboardList_ThemesDescription" xml:space="preserve">
+    <value>¡seleccione sus colores favoritos!</value>
+  </data>
+  <data name="DashboardList_SettingsTitle" xml:space="preserve">
+    <value>configuración</value>
+  </data>
+  <data name="DashboardList_SettingsDescription" xml:space="preserve">
+    <value>personalizar la configuración</value>
+  </data>
+  <data name="DashboardList_HelpTitle" xml:space="preserve">
+    <value>ayuda</value>
+  </data>
+  <data name="DashboardList_Helpescription" xml:space="preserve">
+    <value>cómo jugar</value>
+  </data>
+  <data name="About_VersionTextBlock" xml:space="preserve">
+    <value>versión</value>
+  </data>
+  <data name="ThemesPage_PlayerStars_Text" xml:space="preserve">
+    <value>Tienes</value>
+  </data>
+  <data name="OnOffConverter_Convert_On" xml:space="preserve">
+    <value>Activado</value>
+  </data>
+  <data name="OnOffConverter_Convert_Off" xml:space="preserve">
+    <value>Desactivado</value>
+  </data>
+  <data name="HelpPage_RulesTitle" xml:space="preserve">
+    <value>Reglas</value>
+  </data>
+  <data name="HelpPage_Rules_TextBox" xml:space="preserve">
+    <value>El tablero consiste en puntos de dos colores. Cuando se pulse un punto, todos los puntos adyacentes se invierten y cambian de color.</value>
+  </data>
+  <data name="HelpPage_Goal_Title" xml:space="preserve">
+    <value>Meta</value>
+  </data>
+  <data name="HelpPage_GoalTextBlock" xml:space="preserve">
+    <value>Para completar cada nivel debes cambiar todos los puntos a un color, el color de la "meta". Es visible todo el tiempo durante el juego.</value>
+  </data>
+  <data name="HelpPage_Stars_Title" xml:space="preserve">
+    <value>Estrellas</value>
+  </data>
+  <data name="HelpPage_Stars_TextBlock1" xml:space="preserve">
+    <value>Cada uno de los niveles puede ser completado con un número de  jugadas (pulsaciones). Cuantas menos jugadas sean realizadas, más estrellas se concederán al completarlo.</value>
+  </data>
+  <data name="HelpPage_Stars_TextBlock2" xml:space="preserve">
+    <value>Se puede utilizar las estrellas para desbloquear temas coloridos.</value>
+  </data>
+  <data name="HelpPage_Stars_TextBlock3" xml:space="preserve">
+    <value>¿Puedes desbloquearlos todos?</value>
+  </data>
+  <data name="GameTutorial_Header" xml:space="preserve">
+    <value>COMO JUGAR</value>
+  </data>
+  <data name="PointsToHeaderConverter_Convert_Perfect" xml:space="preserve">
+    <value>¡PERFECTO!</value>
+  </data>
+  <data name="PointsToHeaderConverter_Convert_Good" xml:space="preserve">
+    <value>¡DESPEJADO!</value>
+  </data>
+  <data name="GameTutorial_Step2_TextBlock1" xml:space="preserve">
+    <value>El nivel es</value>
+  </data>
+  <data name="GameTutorial_Step2_TextBlock2" xml:space="preserve">
+    <value>completado</value>
+  </data>
+  <data name="GameTutorial_Step2_TextBlock3" xml:space="preserve">
+    <value>cuando se cambia todos los puntos a la</value>
+  </data>
+  <data name="GameTutorial_Step2_TextBlock4" xml:space="preserve">
+    <value>color.</value>
+  </data>
+  <data name="GameTutorial_Step3_TextBLock1" xml:space="preserve">
+    <value>Cuanto menos cantidad de movimientos</value>
+  </data>
+  <data name="GameTutorial_Step3_TextBLock2" xml:space="preserve">
+    <value>realices para finalizar un nivel...</value>
+  </data>
+  <data name="GameTutorial_Step3_TextBLock3" xml:space="preserve">
+    <value>...mas estrellas</value>
+  </data>
+  <data name="GameTutorial_Step3_TextBLock4" xml:space="preserve">
+    <value>obtendrás!</value>
+  </data>
+  <data name="GameTutorial_Step3_TextBLock5" xml:space="preserve">
+    <value>Use las estrellas</value>
+  </data>
+  <data name="MainPage_MoreLevelsBaner" xml:space="preserve">
+    <value>¡Mas niveles próximamente!</value>
+  </data>
+  <data name="GamePaused_Title" xml:space="preserve">
+    <value>PAUSA</value>
+  </data>
+  <data name="GamePaused_ResumeButton_Content" xml:space="preserve">
+    <value>Reanudar</value>
+    <comment>Kontynuuj</comment>
+  </data>
+  <data name="GamePaused_Button_Levels" xml:space="preserve">
+    <value>Niveles</value>
+  </data>
+  <data name="GameWon_LevelsButton_Content" xml:space="preserve">
+    <value>Niveles</value>
+  </data>
+  <data name="Dashboard_IsNewTextBlock_Text" xml:space="preserve">
+    <value>¡nueva!</value>
+  </data>
+  <data name="GameTutorialStep2_GoalTextBlock" xml:space="preserve">
+    <value> específico</value>
+  </data>
+  <data name="SettingsControl_ResetProgressMessageBox_Caption" xml:space="preserve">
+    <value>Reinicializar Progresos</value>
+  </data>
+  <data name="SettingsControl_ResetProgressMessageBox_Mesage" xml:space="preserve">
+    <value>¿Esta seguro de reinicializar todo su progreso? Esto incluye los niveles y el contenido desbloqueado.</value>
+  </data>
+  <data name="SettingsControl_ResetProgressMessageBox_ButtonYes" xml:space="preserve">
+    <value>sí</value>
+  </data>
+  <data name="Dashboard_GameProgres_TextBlock" xml:space="preserve">
+    <value>progreso en el juego:</value>
+  </data>
+  <data name="GamePage_ApplicationBar_Undo" xml:space="preserve">
+    <value>deshacer</value>
+  </data>
+  <data name="GamePage_ApplicationBar_Redo" xml:space="preserve">
+    <value>rehacer</value>
+  </data>
+  <data name="GamePage_ApplicationBar_Restart" xml:space="preserve">
+    <value>reanudar</value>
+  </data>
+  <data name="GamePage_ApplicationBar_Themes" xml:space="preserve">
+    <value>temas</value>
+  </data>
+  <data name="GamePage_ApplicationBar_Settings" xml:space="preserve">
+    <value>configuración</value>
+  </data>
+  <data name="GameWonControl_MovesDescriptionTextBlock" xml:space="preserve">
+    <value>Has completo el nivel en</value>
+  </data>
+  <data name="GameWonControl_MovesCaptionMany" xml:space="preserve">
+    <value>movimientos</value>
+  </data>
+  <data name="GameWonControlModel_MovesCountCaption_Single" xml:space="preserve">
+    <value>movimiento</value>
+  </data>
+  <data name="GameTutorial_Step3_TextBlock6" xml:space="preserve">
+    <value>para desbloquear</value>
+  </data>
+  <data name="GameTutorialControl_Step3_TextBlock7" xml:space="preserve">
+    <value>muchos coloridos</value>
+  </data>
+  <data name="GameTutorialControl_Step3_TextBlock8" xml:space="preserve">
+    <value>temas</value>
+  </data>
+  <data name="GameTutorialControl_Step3_TextBlock9" xml:space="preserve">
+    <value>botón</value>
+  </data>
+  <data name="AboutPage_LikeUsButton" xml:space="preserve">
+    <value>me gusta!</value>
+  </data>
+  <data name="CreditsPage_Title" xml:space="preserve">
+    <value>Créditos</value>
+  </data>
+  <data name="AboutPage_CreditsButton" xml:space="preserve">
+    <value>Créditos</value>
+  </data>
+  <data name="SettingsPage_MusicSwitch_Header" xml:space="preserve">
+    <value>Música de menú</value>
+  </data>
+  <data name="UpdateLiveTileGameWonAction_BackTitle" xml:space="preserve">
+    <value>Progreso del juego</value>
+  </data>
+  <data name="UpdateLiveTileGameWonAction_BackContent_Temp" xml:space="preserve">
+    <value>¿Has jugado hoy?</value>
+  </data>
+  <data name="UpdateLiveTileGameWonAction_BackTitle_Temp" xml:space="preserve">
+    <value>Ganaste {0} estrellas en el último juego.</value>
+  </data>
+  <data name="AskForRating_Content" xml:space="preserve">
+    <value>Nos gustaría que calificaras nuestro juego con 5 estrellas. ¡Sus comentarios nos ayudan a trabajar en la aplicación, y hacerla mejor!</value>
+  </data>
+  <data name="AskForRating_Title" xml:space="preserve">
+    <value>¡EVALUANOS!</value>
+  </data>
+  <data name="SendToastHandler_Title" xml:space="preserve">
+    <value>¡Logro desbloqueado!</value>
+  </data>
+  <data name="DashboardList_AchievementsTitle" xml:space="preserve">
+    <value>logros</value>
+  </data>
+  <data name="GamePage_ApplicationBar_Achievements" xml:space="preserve">
+    <value>logros</value>
+  </data>
+  <data name="AchievementsPage_Title" xml:space="preserve">
+    <value>logros</value>
+  </data>
+  <data name="DashBoardList_AchievementsDescription" xml:space="preserve">
+    <value>¿listo para un nuevo reto?</value>
+  </data>
+  <data name="Achievement_TotalMoveCount" xml:space="preserve">
+    <value>Efectúe 500 movimientos.</value>
+  </data>
+  <data name="Achievement_TotalInvertCount" xml:space="preserve">
+    <value>Invierta 10000 puntos.</value>
+  </data>
+  <data name="Achievement_TotalGameTime" xml:space="preserve">
+    <value>Juega por 90 minutos en total.</value>
+  </data>
+  <data name="Achievement_GameTime1" xml:space="preserve">
+    <value>Complete un nivel en menos de 5 segundos en el grupo de niveles fáciles.</value>
+  </data>
+  <data name="Achievement_GameTime2" xml:space="preserve">
+    <value>Complete un nivel en menos de 7 segundos en el grupo de niveles medios.</value>
+  </data>
+  <data name="Achievement_GameTime3" xml:space="preserve">
+    <value>Complete un nivel en menos de 10 segundos en el grupo de niveles difíciles.</value>
+  </data>
+  <data name="Achievement_TutorialFinished" xml:space="preserve">
+    <value>Complete tutorial.</value>
+  </data>
+  <data name="Achievement_WarmupFinished" xml:space="preserve">
+    <value>Complete calentamiento.</value>
+  </data>
+  <data name="Achievement_EasyFinished" xml:space="preserve">
+    <value>Complete el grupo de niveles fáciles.</value>
+  </data>
+  <data name="Achievement_MediumFinished" xml:space="preserve">
+    <value>Complete el grupo de niveles medios.</value>
+  </data>
+  <data name="Achievement_HardFinished" xml:space="preserve">
+    <value>Complete el grupo de niveles difíciles.</value>
+  </data>
+  <data name="Achievement_PerfectCount1" xml:space="preserve">
+    <value>Complete 50 niveles con estatus perfecto.</value>
+  </data>
+  <data name="Achievement_PerfectCount2" xml:space="preserve">
+    <value>Complete 100 niveles con estatus perfecto.</value>
+  </data>
+  <data name="Achievement_PerfectCount3" xml:space="preserve">
+    <value>Complete 150 niveles con estatus perfecto.</value>
+  </data>
+  <data name="Achievement_WonStreak1" xml:space="preserve">
+    <value>Ten una racha de 5 victorias perfectas en el grupo de niveles fáciles.</value>
+  </data>
+  <data name="Achievement_WonStreak2" xml:space="preserve">
+    <value>Ten una racha de 5 victorias perfectas en el grupo de niveles medios.</value>
+  </data>
+  <data name="Achievement_WonStreak3" xml:space="preserve">
+    <value>Ten una racha de 5 victorias perfectas en el grupo de niveles difíciles.</value>
+  </data>
+  <data name="SingleAchievemenControl_TextBlock_Incomplete" xml:space="preserve">
+    <value>Incompleto</value>
+  </data>
+  <data name="Achievement_EasyFinished_Name" xml:space="preserve">
+    <value>Oficial</value>
+  </data>
+  <data name="Achievement_GameTime2_Name" xml:space="preserve">
+    <value>A velocidad del rayo</value>
+  </data>
+  <data name="Achievement_GameTime3_Name" xml:space="preserve">
+    <value>Regla del tiempo</value>
+  </data>
+  <data name="Achievement_HardFinished_Name" xml:space="preserve">
+    <value>Maestro</value>
+  </data>
+  <data name="Achievement_MeiumFinished_Name" xml:space="preserve">
+    <value>Erudito</value>
+  </data>
+  <data name="Achievement_PerfectCount1_Finished" xml:space="preserve">
+    <value>Pionero</value>
+  </data>
+  <data name="Achievement_PerfectCount2_Finished" xml:space="preserve">
+    <value>Buscador del ideal</value>
+  </data>
+  <data name="Achievement_PerfectCount3_Finished" xml:space="preserve">
+    <value>Perfeccionista</value>
+  </data>
+  <data name="Achievement_TotalGameTime_Name" xml:space="preserve">
+    <value>La travesía más larga</value>
+  </data>
+  <data name="Achievement_TotalMoveCount_Name" xml:space="preserve">
+    <value>El Emperador de las pulsaciones</value>
+  </data>
+  <data name="Achievement_TutorialFinished_Name" xml:space="preserve">
+    <value>Novato</value>
+  </data>
+  <data name="Achievement_WarmupFinished_Name" xml:space="preserve">
+    <value>Aprendiz</value>
+  </data>
+  <data name="Achievement_WonStreak1_Name" xml:space="preserve">
+    <value>Constante</value>
+  </data>
+  <data name="Achievement_WonStreak2_Name" xml:space="preserve">
+    <value>Roca sólida</value>
+  </data>
+  <data name="GamePage_ApplicaitonBar_Next_level" xml:space="preserve">
+    <value>Siguiente nivel</value>
+  </data>
+  <data name="GameTutorialStep3_Text2_Disabled" xml:space="preserve">
+    <value>los bloques no hacen nada cuando son pulsados y nunca son inviertidos.</value>
+  </data>
+  <data name="GameTutorialStep3_Text2_Disabled_Prefix" xml:space="preserve">
+    <value>Deshabilitado</value>
+  </data>
+  <data name="GameTutorialStep4_Text1_Prefix" xml:space="preserve">
+    <value>En este paquete de niveles, un nuevo</value>
+  </data>
+  <data name="GameTutorialStep4_Text1_Disabled" xml:space="preserve">
+    <value>deshabilitado</value>
+  </data>
+  <data name="GameTutorialStep4_Text1_Postfix" xml:space="preserve">
+    <value>bloque es introducido:</value>
+  </data>
+  <data name="Achievement_FacebookLike_Name" xml:space="preserve">
+    <value>Colaborador</value>
+  </data>
+  <data name="Achievement_FacebookLike_Description" xml:space="preserve">
+    <value>Dale me gusta a Invert it! en facebook a través de la página de "acerca de".</value>
+  </data>
+  <data name="Achievement_ShapesEasyFinished_Name" xml:space="preserve">
+    <value>Caballero</value>
+  </data>
+  <data name="Achievement_ShapesMediumFinished_Name" xml:space="preserve">
+    <value>Jinete</value>
+  </data>
+  <data name="Achievement_ShapesEasyFinished_Description" xml:space="preserve">
+    <value>Complete un nivel facíl en Shapes pack</value>
+  </data>
+  <data name="Achievement_ShapesMediumFinished_Decription" xml:space="preserve">
+    <value>Complete un medio en Shapes pack.</value>
+  </data>
+  <data name="Achievement_ShapesHardFinished_Name" xml:space="preserve">
+    <value>Paladín</value>
+  </data>
+  <data name="Achievement_ShapesHardFinished_Description" xml:space="preserve">
+    <value>Complete un nivel difícil en Shapes pack</value>
+  </data>
+  <data name="Achievement_RateApp_Name" xml:space="preserve">
+    <value>Crítico</value>
+  </data>
+  <data name="Achievement_RateApp_Description" xml:space="preserve">
+    <value>Califica Invert it! a través de la página de "acerca de".</value>
+  </data>
+  <data name="Achievement_NoUndo_Name" xml:space="preserve">
+    <value>Infalible</value>
+  </data>
+  <data name="AppResources.Achievement_Ultra9X9Finished_Name" xml:space="preserve">
+    <value>Todopoderoso</value>
+  </data>
+  <data name="SettingsControl_ResetProgressMessageBox_ButtonNo" xml:space="preserve">
+    <value>no</value>
+  </data>
+  <data name="Achievement_WonStreak3_Name" xml:space="preserve">
+    <value>Irresistible</value>
+  </data>
+  <data name="MainPage_RemoveAdsButtonDescription" xml:space="preserve">
+    <value>Juega sin anuncios! Ayuda a los autores!</value>
+  </data>
+  <data name="GamePage_RefreshHintsCountButton_CurrentHints" xml:space="preserve">
+    <value>sugerencias</value>
+  </data>
+  <data name="GamePage_RefreshHintsCountButton_MoreHints" xml:space="preserve">
+    <value>más sugerencias</value>
+  </data>
+  <data name="SuggestWithMessageBox_Caption" xml:space="preserve">
+    <value>¿Tienes problema en pasar el nivel?</value>
+  </data>
+  <data name="SuggestWithMessageBox_Text" xml:space="preserve">
+    <value>¿Desea obtener algunos consejos?</value>
+  </data>
+  <data name="PurchaseHintsPage_AdsHint" xml:space="preserve">
+    <value>Compra paquete para eliminar los anuncios</value>
+  </data>
+  <data name="Achievement_PlayEveryDay_Name" xml:space="preserve">
+    <value>Adicto</value>
+  </data>
+  <data name="PuchaseHints_HintsCount_Description2" xml:space="preserve">
+    <value> sugerencias</value>
+  </data>
+  <data name="PuchaseHints_HintsCount_Description1" xml:space="preserve">
+    <value>Tiene </value>
+  </data>
+  <data name="Achievement_Ultra9X9Finished_Description" xml:space="preserve">
+    <value>Complete 9x9 ultra pack.</value>
+  </data>
+  <data name="AppResources.Achievement_NoUndo" xml:space="preserve">
+    <value>Completa perfectamente un nivel en grupo de niveles difíciles en 9x9 pack sin retirar ningún movimiento.</value>
+  </data>
+  <data name="MainPage_RemoveAdsButtonText" xml:space="preserve">
+    <value>Elimina anuncios</value>
+  </data>
+  <data name="PurchaseHintsPage.Title" xml:space="preserve">
+    <value>más sugerencias</value>
+  </data>
+  <data name="StartAppEveryDayMessageDisplayer_Message" xml:space="preserve">
+    <value>Juega por {0} días seguidos para desbloquear el logro y recibir {1} sugenercias GRATIS</value>
+  </data>
+  <data name="StartAppEveryDayMessageDisplayer_Caption" xml:space="preserve">
+    <value>¡DEJATE LEVAR!</value>
+  </data>
+  <data name="Achievement_PlayEveryDay_Description" xml:space="preserve">
+    <value>Juega por {0} días seguidos para recibir {1} sugerencias gratis.</value>
+  </data>
+  <data name="GamePage_AppBar_PurchaseHints" xml:space="preserve">
+    <value>más sugerencias</value>
+  </data>
+</root>

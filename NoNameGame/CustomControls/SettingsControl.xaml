@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="NoNameGame.CustomControls.SettingsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+             xmlns:clickSound="clr-namespace:NoNameGame.CustomControls.ClickSound"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}"
+             d:DesignHeight="480"
+             mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="200" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Vertical">
+            <clickSound:ClickSoundContentControl HorizontalContentAlignment="Stretch"
+                                                     VerticalContentAlignment="Stretch"
+                                                     Style="{StaticResource ClickSoundStyle}">
+
+                <toolkit:ToggleSwitch Name="SoundSwitch"
+                                      Content="{Binding ElementName=SoundSwitch,
+                                                        Path=IsChecked,
+                                                        Converter={StaticResource OnOffConverter}}"
+                                      Header="{Binding Path=LocalizedResources.SettingPage_SoundSwitch_Header,
+                                                       Source={StaticResource LocalizedStrings}}"
+                                      IsChecked="{Binding Path=IsSoundOn,
+                                                          Mode=TwoWay}"
+                                      Style="{StaticResource ToggleSwitchStyleDynamicThemes}" />
+            </clickSound:ClickSoundContentControl>
+            <clickSound:ClickSoundContentControl HorizontalContentAlignment="Stretch"
+                                                     VerticalContentAlignment="Stretch"
+                                                     Style="{StaticResource ClickSoundStyle}">
+
+                <toolkit:ToggleSwitch Name="MusicSwitch"
+                                      Content="{Binding ElementName=MusicSwitch,
+                                                        Path=IsChecked,
+                                                        Converter={StaticResource OnOffConverter}}"
+                                      Header="{Binding Path=LocalizedResources.SettingsPage_MusicSwitch_Header, Source={StaticResource LocalizedStrings}}"
+                                      IsChecked="{Binding Path=IsMusicOn,
+                                                          Mode=TwoWay}"
+                                      Style="{StaticResource ToggleSwitchStyleDynamicThemes}" />
+            </clickSound:ClickSoundContentControl>
+
+            <TextBlock Style="{StaticResource PhoneTextSmallStyle}" Text="{Binding Path=LocalizedResources.SettingsPage_SoundVolumeTextBlock, Source={StaticResource LocalizedStrings}}" />
+            <!--  <customControls:ClickSoundContentControl HorizontalContentAlignment="Stretch"  -->
+            <!--  VerticalContentAlignment="Stretch"  -->
+            <!--  Style="{StaticResource ClickSoundStyle}">  -->
+
+            <Slider Name="VolumeSlider"
+                    Maximum="10"
+                    SmallChange="1"
+                    Style="{StaticResource SliderStyleDynamicThemes}"
+                    ValueChanged="VolumeSlider_OnValueChanged"
+                    Value="{Binding Path=SoundVolume,
+                                    Mode=TwoWay}" />
+            <!--  </customControls:ClickSoundContentControl>  -->
+
+            <clickSound:ClickSoundContentControl HorizontalContentAlignment="Stretch"
+                                                     VerticalContentAlignment="Stretch"
+                                                     Style="{StaticResource ClickSoundStyle}">
+                <toolkit:ToggleSwitch Name="VibrationSwitch"
+                                      Content="{Binding ElementName=VibrationSwitch,
+                                                        Path=IsChecked,
+                                                        Converter={StaticResource OnOffConverter}}"
+                                      Header="{Binding Path=LocalizedResources.SettingsPage_VibrationSwitch_Header,
+                                                       Source={StaticResource LocalizedStrings}}"
+                                      IsChecked="{Binding Path=IsVibrationOn,
+                                                          Mode=TwoWay}"
+                                      Style="{StaticResource ToggleSwitchStyleDynamicThemes}" />
+            </clickSound:ClickSoundContentControl>
+
+            <clickSound:ClickSoundContentControl Style="{StaticResource ClickSoundStyle}">
+                <Button Name="ResetProgressButton"
+                        Click="ResetProgressButton_OnClick"
+                        Content="{Binding Path=LocalizedResources.SettingsPage_ResetProgressButton_Content,
+                                          Source={StaticResource LocalizedStrings}}"
+                        Style="{StaticResource ButtonStyleDynamicThemes}"
+                        Visibility="{Binding CanResetProgress,
+                                             Converter={StaticResource BoolToVisibilityConverter}}" />
+            </clickSound:ClickSoundContentControl>
+
+            <!--  <TextBlock Style="{StaticResource PhoneTextSmallStyle}">Theme</TextBlock>  -->
+        </StackPanel>
+    </Grid>
+</UserControl>

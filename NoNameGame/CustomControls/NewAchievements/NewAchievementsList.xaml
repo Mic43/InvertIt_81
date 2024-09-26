@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="NoNameGame.CustomControls.NewAchievements.NewAchievementsList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:newAchievements="clr-namespace:NoNameGame.CustomControls.NewAchievements"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+    <phone:LongListSelector Name="AchievementsList"
+                            LayoutMode="List"
+                            ItemsSource="{Binding Path=Achievements}"
+                            >
+        <phone:LongListSelector.ItemTemplate>
+            <DataTemplate>
+              <newAchievements:SingleAchievementControl Margin="9,0,9,0" />
+            </DataTemplate>
+        </phone:LongListSelector.ItemTemplate>
+    </phone:LongListSelector>
+</UserControl>

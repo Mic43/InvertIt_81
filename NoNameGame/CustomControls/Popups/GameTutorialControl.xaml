@@ -1,0 +1,109 @@
+﻿<UserControl x:Class="NoNameGame.CustomControls.Popups.GameTutorialControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:configuration="clr-namespace:NoNameGame.Configuration"
+             xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+             xmlns:imagetools="clr-namespace:ImageTools.Controls;assembly=ImageTools.Control"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:popups="clr-namespace:NoNameGame.CustomControls.Popups"
+             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+             xmlns:clickSound="clr-namespace:NoNameGame.CustomControls.ClickSound"
+             xmlns:controls="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+             xmlns:controls1="clr-namespace:ImageTools.Controls;assembly=ImageTools.Controls"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center"
+             MaxWidth="460"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}"
+             mc:Ignorable="d">
+
+    <popups:PopupWindowBase Margin="0" Header="{Binding Path=LocalizedResources.GameTutorial_Header, Source={StaticResource LocalizedStrings}}">
+        <popups:PopupWindowBase.Resources>
+            <controls1:ImageConverter x:Key="ImageConverter" />
+            <Storyboard x:Name="FadeImageStoryboard"
+                        TargetProperty="Opacity"
+                        TargetName="ImagePanel">
+                <DoubleAnimation BeginTime="0:0:1.500"
+                                 Duration="0:0:0.700"
+                                 From="0"
+                                 To="1" />
+            </Storyboard>
+            <Storyboard x:Name="FadeTextStoryboard"
+                        TargetProperty="Opacity"
+                        TargetName="TutorialTextBlock">
+                <DoubleAnimation BeginTime="0:0:0.300"
+                                 Duration="0:0:0.700"
+                                 From="0"
+                                 To="1" />
+            </Storyboard>
+        </popups:PopupWindowBase.Resources>
+        <StackPanel Margin="0,0,0,0"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Top"
+                    Orientation="Vertical">
+
+            <TextBlock Name="TutorialTextBlock"
+                       Margin="12,12,12,16"
+                       Foreground="Gray"
+                       FontSize="22"
+                       Opacity="0"
+                       TextWrapping="Wrap">
+                <TextBlock.Inlines>
+                    <Run FontWeight="Bold" Text="{Binding Path=LocalizedResources.Tutorial_Page1_Text1, Source={StaticResource LocalizedStrings}}" />
+                    <Run Text="{Binding Path=LocalizedResources.Tutorial_Page1_Text2, Source={StaticResource LocalizedStrings}}" />
+                </TextBlock.Inlines>
+
+            </TextBlock>
+            <Grid Name="ImagePanel"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Top"
+                  Opacity="0">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+<!---->
+                <controls1:AnimatedImage Stretch="None" Margin="24,88,0,0"                                         
+                    x:Name="Image" Source="{Binding Path=ImageSource, 
+                        Converter={StaticResource ImageConverter}}" />
+
+              
+<!--                <Image Name="FngerImage"  Visibility="Collapsed"-->
+<!--                       Grid.Column="0"-->
+<!--                       Margin="20,0,0,10" -->
+<!--                       Source="../../Assets/tap3.gif"-->
+<!--                       Stretch="None" />-->
+                <Image Grid.Column="1"
+                       Margin="-20,0,0,0"
+                       Source="../../Assets/arrow-right.png"
+                       Stretch="None" />
+            </Grid>
+
+            <clickSound:ClickSoundContentControl HorizontalContentAlignment="Stretch" Style="{StaticResource ClickSoundStyle}"
+                        Margin="0,60,0,0"                          >
+                <controls:RoundButton x:Name="OkButton" ButtonHeight="90" ButtonWidth="90" Style="{StaticResource RoundButtonStyleDynamicThemes}"
+
+                                       toolkit:TiltEffect.IsTiltEnabled="True"
+                                       ImageSource="{StaticResource ResumeBitmapImage}"
+                                     
+                                       >
+
+                </controls:RoundButton>
+
+<!--                <Button x:Name="OkButton"-->
+<!--                        Margin="0,60,0,0"-->
+<!--                        Content="Ok"-->
+<!--                        Style="{StaticResource ButtonStyleDynamicThemes}"-->
+<!--                        toolkit:TiltEffect.IsTiltEnabled="True" />-->
+            </clickSound:ClickSoundContentControl>
+        </StackPanel>
+
+    </popups:PopupWindowBase>
+</UserControl>

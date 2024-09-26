@@ -1,0 +1,182 @@
+﻿<noNameGame:BasePage x:Class="NoNameGame.MainPage"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+                     xmlns:attachedProperties="clr-namespace:NoNameGame.CustomControls.AttachedProperties"
+                     xmlns:configuration="clr-namespace:NoNameGame.Configuration"
+                     xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:levels="clr-namespace:NoNameGame.CustomControls.Levels"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:noNameGame="clr-namespace:NoNameGame"
+                     xmlns:overlayAnimatedBackground="clr-namespace:NoNameGame.CustomControls.OverlayAnimatedBackground"
+                     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                     xmlns:stats="clr-namespace:NoNameGame.CustomControls.Stats"
+                     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                     xmlns:clickSound="clr-namespace:NoNameGame.CustomControls.ClickSound"
+                     BackKeyPress="MainPage_OnBackKeyPress"
+                     FontSize="{StaticResource PhoneFontSizeNormal}"
+                     Foreground="{StaticResource PhoneForegroundBrush}"
+                     Orientation="Portrait"
+                     SupportedOrientations="Portrait"
+                     shell:SystemTray.IsVisible="False"
+                     toolkit:TiltEffect.IsTiltEnabled="True"
+                     mc:Ignorable="d">   
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+   
+    <Grid x:Name="LayoutRoot">
+        <!--  <Grid.Background>  -->
+        <!--  <ImageBrush ImageSource="/Assets/images.jpg"  -->
+        <!--  Stretch="Fill" />  -->
+        <!--  </Grid.Background>  -->
+        <overlayAnimatedBackground:OverlayTest x:Name="OverlayTest" Canvas.ZIndex="-1" />
+        <Grid Name="ContentGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <phone:Panorama x:Name="PanoramaControl"
+                            Title=""
+                            SelectionChanged="PanoramaControl_OnSelectionChanged">
+                <phone:Panorama.TitleTemplate>
+                    <DataTemplate>
+                        <TextBlock Margin="12,0,0,0"
+                                   FontFamily="{StaticResource CustomFontFamilyLond}"
+                                   FontSize="220">
+                            <Run Text="invert">
+                                <Run.Foreground>
+                                    <SolidColorBrush Color="{Binding (attachedProperties:ThemeSecondColorExtension.ThemeSecondColor), ElementName=PanoramaControl}" />
+                                </Run.Foreground>
+                            </Run>
+                            <Run Text="it!">
+                                <Run.Foreground>
+                                    <SolidColorBrush Color="{Binding (attachedProperties:ThemeMainColorExtension.ThemeMainColor), ElementName=PanoramaControl}" />
+                                </Run.Foreground>
+                            </Run>
+                        </TextBlock>
+                    </DataTemplate>
+                </phone:Panorama.TitleTemplate>
+                <phone:Panorama.Background>
+                    <SolidColorBrush Color="{StaticResource OverlayColor}" />
+                </phone:Panorama.Background>             
+                <phone:PanoramaItem x:Name="DashboardPanoramaItem"
+                                    Header="{Binding LocalizedResources.MainPage_Dashboard_Title,
+                                                     Source={StaticResource LocalizedStrings}}"
+                                    Style="{StaticResource CustomPanoramaItemStyle}">
+                    <Grid Margin="3,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />                        
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <customControls:DashboardCommandsControl x:Name="DashboardCommandsControl" DashboardCommandExecuted="DashboardCommandsControl_OnDashboardCommandExecuted" />
+                        <Button Grid.Row="1" Name="ChallengeButton" Content="Challenge" Click="ChallengeButton_OnClick" Visibility="Visible"></Button>
+                        <StackPanel Grid.Row="3" Orientation="Vertical">
+                            <TextBlock Style="{StaticResource PhoneTextSubtleStyle}" Text="{Binding Path=LocalizedResources.Dashboard_GameProgres_TextBlock, Source={StaticResource LocalizedStrings}}" Margin="48,0,0,6"></TextBlock>
+                            <stats:StarsProgressBar x:Name="StarsProgressBar"
+                                                   
+                                                    Height="30"
+                                                    Margin="48,0,48,50"
+                                                    HorizontalAlignment="Stretch"
+                                                    CacheMode="BitmapCache"
+                                                    Tap="StarsProgressBar_OnTap" />
+                          
+                        </StackPanel>
+                    </Grid>
+                </phone:PanoramaItem>
+                <phone:PanoramaItem Header="{Binding LocalizedResources.MainPage_NewGame_Title, Source={StaticResource LocalizedStrings}}" Style="{StaticResource CustomPanoramaItemStyle}">
+                    <Grid Margin="3,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition MinHeight="290"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <levels:LevelPacksListControl x:Name="LevelPacksListControl"
+                                                      Loaded="LevelPacksListControl_OnLoaded" />
+
+                         <clickSound:ClickSoundContentControl Grid.Row="1" Name="RemoveAdsButton" Tap="RemoveAdsButton_OnTap"
+                                                                                     Margin="12,0,0,0"
+                                                                                     HorizontalAlignment="Stretch"
+                                                                                     HorizontalContentAlignment="Stretch"                                                           
+                                                                                     Style="{StaticResource ClickSoundStyle}">
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+
+                                <Image Height="60" Width="60"  Name="ContestIcon"
+                                      Margin="0,7,0,0"
+                                      Stretch="Fill" Source="{StaticResource CrossBitmapImage}">
+
+                                </Image>
+
+                                <Grid Name="DescriptionGrid"
+                                            Grid.Column="1"
+                                            HorizontalAlignment="Stretch"
+                                            Background="Transparent">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock HorizontalAlignment="Left"
+                                                    FontWeight="SemiBold"
+                                                    Style="{StaticResource PhoneTextLargeStyle}"
+                                                    Text="{Binding Path=LocalizedResources.MainPage_RemoveAdsButtonText, Source={StaticResource LocalizedStrings}}" />
+                                    <!--  Foreground="{Binding Source={StaticResource GameResourcesProvider},  -->
+                                    <!--  Path=GameResources.UnCheckedAreaGradientBrush}"  -->
+
+                                    <TextBlock Grid.Row="1"
+                                                                   
+                                                    Style="{StaticResource PhoneTextSubtleStyle}"
+                                                    Text="{Binding Path=LocalizedResources.MainPage_RemoveAdsButtonDescription, Source={StaticResource LocalizedStrings}}"
+                                                    toolkit:SlideInEffect.LineIndex="1" />
+                                </Grid>
+                            </Grid>
+                        </clickSound:ClickSoundContentControl>                       
+                        
+                        <clickSound:ClickSoundContentControl  
+                            HorizontalAlignment="Right"
+                             VerticalAlignment="Bottom"
+                             Margin="0,0,-8,4" 
+                             Grid.Row="2">
+                        <Image Name="AdDealsIcon"
+                               Tap="AdDealsIcon_OnTap"
+                               Stretch="None" 
+                               Source="../Assets/Deals/picto_addeal_deals_100.png"></Image>
+                        </clickSound:ClickSoundContentControl>                        
+                    </Grid>
+                    
+                </phone:PanoramaItem>
+                <phone:PanoramaItem Header="{Binding LocalizedResources.MainPage_About_Title, Source={StaticResource LocalizedStrings}}" Style="{StaticResource CustomPanoramaItemStyle}">
+                    <customControls:AboutControl Margin="3,0,0,0" CreditsPageRequested="AboutControl_OnCreditsPageRequested" />
+                </phone:PanoramaItem>
+            </phone:Panorama>
+        </Grid>
+    </Grid>
+
+</noNameGame:BasePage>

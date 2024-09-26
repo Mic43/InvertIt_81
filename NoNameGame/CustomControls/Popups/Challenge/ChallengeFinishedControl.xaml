@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="NoNameGame.CustomControls.Popups.Challenge.ChallengeFinishedControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:popups="clr-namespace:NoNameGame.CustomControls.Popups"
+             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+             xmlns:clickSound="clr-namespace:NoNameGame.CustomControls.ClickSound"
+             xmlns:controls1="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+             x:Name="UserControl"
+             MinWidth="400"
+             HorizontalAlignment="Center"
+             VerticalAlignment="Center"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             mc:Ignorable="d">
+    <UserControl.Resources>       
+    </UserControl.Resources>
+    <popups:PopupWindowBase Header="Kwa" ShowTitleAnimation="False">
+                  
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+            <StackPanel></StackPanel>               
+            <StackPanel Grid.Row="1" Margin="0,12,0,6"
+                            VerticalAlignment="Center" HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                                                         
+
+                <clickSound:ClickSoundContentControl HorizontalContentAlignment="Stretch"
+                                                             Style="{StaticResource ClickSoundStyle}">
+
+                    <controls1:RoundButton ButtonHeight="90" ButtonWidth="90" Style="{StaticResource RoundButtonStyleDynamicThemes}"
+                                      x:Name="OkButton" toolkit:TiltEffect.IsTiltEnabled="True"                                         
+                                      Visibility="{Binding Path=CanStartNextLevel,
+                                                 Converter={StaticResource BoolToVisibilityConverter}}"
+                                       ImageSource="../../../Assets/AppBar/check.png">
+                    </controls1:RoundButton>
+
+                </clickSound:ClickSoundContentControl>
+
+
+
+            </StackPanel>
+        </Grid>
+    </popups:PopupWindowBase>
+
+</UserControl>

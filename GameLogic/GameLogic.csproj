@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C29E69AB-97A1-4166-9533-1B1CD8D97769}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GameLogic</RootNamespace>
+    <AssemblyName>GameLogic</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <TargetFrameworkProfile />
+    <DefaultLanguage>en-US</DefaultLanguage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ARM|AnyCPU'">
+    <OutputPath>bin\ARM\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ARM|x86'">
+    <OutputPath>bin\x86\ARM\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ARM|ARM'">
+    <OutputPath>bin\ARM\ARM\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Area.cs" />
+    <Compile Include="Areas\StandardArea.cs" />
+    <Compile Include="BoardSetuper\IBoardSetuper.cs" />
+    <Compile Include="BoardSolver\SimpleBoardSolver.cs" />
+    <Compile Include="Board\AreaMatrix.cs" />
+    <Compile Include="Board\GameBoard.cs" />
+    <Compile Include="Board\BoardCoordinate.cs" />
+    <Compile Include="Board\BoardHelpers.cs" />
+    <Compile Include="Board\BoardSize.cs" />
+    <Compile Include="Game\Game.cs" />
+    <Compile Include="Game\GameData.cs" />
+    <Compile Include="Game\GameDifficulty.cs" />
+    <Compile Include="Game\GameState.cs" />
+    <Compile Include="Game\GameWonEventHandlerArgs.cs" />
+    <Compile Include="Game\WonGameStats.cs" />
+    <Compile Include="Infrastructure\ListExtensions.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="MovesSequentionGenerators\DifficultyAssigners\IDifficultyAssigner.cs" />
+    <Compile Include="MovesSequentionGenerators\DifficultyAssigners\LevelDifficulty.cs" />
+    <Compile Include="MovesSequentionGenerators\DifficultyAssigners\MaciekDifficultyAssigner.cs" />
+    <Compile Include="MovesSequentionGenerators\EvaluatingGenerator.cs" />
+    <Compile Include="MovesSequentionGenerators\ComplexMovesSequentionGenerator.cs" />
+    <Compile Include="MovesSequentionGenerators\Evaluators\AlwaysTrueEvaluator.cs" />
+    <Compile Include="MovesSequentionGenerators\Evaluators\MovesSequentionEvaluator.cs" />
+    <Compile Include="MovesSequentionGenerators\Evaluators\IMovesSequentionEvaluator.cs" />
+    <Compile Include="MovesSequentionGenerators\Evaluators\SimpleMovesSequentionEvaluator.cs" />
+    <Compile Include="MovesSequentionGenerators\Helpers\GeneratedMovesDictionary.cs" />
+    <Compile Include="MovesSequentionGenerators\IMovesSequentionGenerator.cs" />
+    <Compile Include="MovesSequentionGenerators\RandomGenerator.cs" />
+    <Compile Include="MovesSequentionGenerators\RandomUniqueGenerator.cs" />
+    <Compile Include="BoardSolver\IBoardSolver.cs" />
+    <Compile Include="WinPointsCalculators\IWinPointsCalculator.cs" />
+    <Compile Include="WinPointsCalculators\RandomWinPointsCalculator.cs" />
+    <Compile Include="WinPointsCalculators\StarsWinPointsCalculator.cs" />
+    <Compile Include="WinPointsCalculators\ZeroWinPointsCalculator.cs" />
+    <Compile Include="NeiborghoodFinder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinVerifiers\AllAreasMustBeChecked.cs" />
+    <Compile Include="WinVerifiers\IWinVerifier.cs" />
+    <Compile Include="WinVerifiers\WinVerifierWithDisabledAreas.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{FEF000BB-5D08-474F-A95F-3A6D71195A03}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Combinatorics">
+      <HintPath>..\..\InvertIt\NoNameGame\Bin\Release\Combinatorics.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <ProjectExtensions />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

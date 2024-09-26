@@ -1,0 +1,838 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:configuration="clr-namespace:NoNameGame.Configuration"
+                    xmlns:controls="clr-namespace:NoNameGame.CustomControls.AttachedProperties"
+                    xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:es="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing"
+                    xmlns:levels="clr-namespace:NoNameGame.CustomControls.Levels"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                    xmlns:toolkitPrimitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone.Controls.Toolkit"
+                    xmlns:clickSound="clr-namespace:NoNameGame.CustomControls.ClickSound"
+                    xmlns:popups="clr-namespace:NoNameGame.CustomControls.Popups"
+                    xmlns:Converters="clr-namespace:Coding4Fun.Toolkit.Controls.Converters;assembly=Coding4Fun.Toolkit.Controls" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:Controls="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+                    mc:Ignorable="d">
+
+    <configuration:GameResourcesProvider x:Key="GameResourcesProvider" />
+
+    <Style x:Key="ButtonStyleDynamicThemes" TargetType="Button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}" />
+        <Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}" />
+        <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}" />
+        <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}" />
+        <Setter Property="Padding" Value="10,5,10,6" />
+        <!--  <Setter Property="Tag" Value="{Binding Path=CheckedAreaGradientBrush, Source={StaticResource GameResources}}"></Setter>  -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentContainer" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneForegroundBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding (controls:ThemeMainColorExtension.ThemeMainBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentContainer" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="BorderBrush">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <!--  Background="{Binding (controls:ThemeMainColorExtension.ThemeMainBrush), RelativeSource={RelativeSource TemplatedParent}}"  -->
+                        <Border x:Name="ButtonBackground"
+							Margin="{StaticResource PhoneTouchTargetOverhang}"
+							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							CornerRadius="0">
+                            <ContentControl x:Name="ContentContainer"
+								HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+								VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+								Content="{TemplateBinding Content}"
+								ContentTemplate="{TemplateBinding ContentTemplate}"
+								Foreground="{TemplateBinding Foreground}"
+								Padding="{TemplateBinding Padding}" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ToggleSwitchStyleDynamicThemes" TargetType="toolkit:ToggleSwitch">
+        <Setter Property="Background" Value="{StaticResource PhoneBackgroundBrush}" />
+        <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilyLight}" />
+        <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeLarge}" />
+        <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="SwitchForeground" Value="{StaticResource PhoneAccentBrush}" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="toolkit:ToggleSwitch">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						CacheMode="BitmapCache"
+						Padding="{TemplateBinding Padding}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+											Storyboard.TargetName="Header"
+											Storyboard.TargetProperty="Opacity"
+											To="0.3" />
+                                        <DoubleAnimation Duration="0"
+											Storyboard.TargetName="Content"
+											Storyboard.TargetProperty="Opacity"
+											To="0.3" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid Margin="12,5,12,42">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <ContentControl x:Name="Header"
+								Margin="-1,0,0,0"
+								HorizontalAlignment="Left"
+								VerticalAlignment="Bottom"
+								Content="{TemplateBinding Header}"
+								ContentTemplate="{TemplateBinding HeaderTemplate}"
+								FontFamily="{StaticResource PhoneFontFamilyNormal}"
+								FontSize="{StaticResource PhoneFontSizeNormal}"
+								Foreground="{StaticResource PhoneSubtleBrush}"
+								IsTabStop="False"
+								Opacity="{TemplateBinding Opacity}" />
+                            <toolkitPrimitives:ToggleSwitchButton x:Name="Switch"
+								Grid.RowSpan="2"
+								Grid.Column="1"
+								Margin="-22,-29,-24,-28"
+								VerticalAlignment="Bottom"
+								Background="{TemplateBinding Background}"
+								Opacity="{TemplateBinding Opacity}"
+								SwitchForeground="{Binding (controls:ThemeMainColorExtension.ThemeMainBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <ContentControl x:Name="Content"
+								Grid.Row="1"
+								Margin="-1,1,0,-7"
+								HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+								VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+								Content="{TemplateBinding Content}"
+								ContentTemplate="{TemplateBinding ContentTemplate}"
+								IsTabStop="False"
+								Opacity="{TemplateBinding Opacity}" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="SliderStyleDynamicThemes" TargetType="Slider">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Maximum" Value="10" />
+        <Setter Property="Minimum" Value="0" />
+        <Setter Property="Value" Value="0" />
+        <Setter Property="Background" Value="{StaticResource PhoneChromeBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource PhoneAccentBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Slider">
+                    <Grid Background="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+											Storyboard.TargetName="HorizontalTrack"
+											Storyboard.TargetProperty="Opacity"
+											To="0.1" />
+                                        <DoubleAnimation Duration="0"
+											Storyboard.TargetName="VerticalTrack"
+											Storyboard.TargetProperty="Opacity"
+											To="0.1" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HorizontalFill" Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="VerticalFill" Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="HorizontalTemplate" Margin="{StaticResource PhoneHorizontalMargin}">
+                            <Rectangle x:Name="HorizontalTrack"
+								Height="12"
+								Margin="0,22,0,50"
+								Fill="{TemplateBinding Background}"
+								IsHitTestVisible="False" />
+                            <Rectangle x:Name="HorizontalFill"
+								Height="12"
+								Margin="0,22,0,50"
+								Fill="{Binding (controls:ThemeMainColorExtension.ThemeMainBrush), RelativeSource={RelativeSource TemplatedParent}}"
+								IsHitTestVisible="False">
+                                <Rectangle.Clip>
+                                    <RectangleGeometry Rect="0, 0, 6, 12" />
+                                </Rectangle.Clip>
+                            </Rectangle>
+                            <Rectangle x:Name="HorizontalCenterElement"
+								Width="12"
+								Height="24"
+								Margin="0,16,0,44"
+								HorizontalAlignment="Left"
+								Fill="{StaticResource PhoneForegroundBrush}">
+                                <Rectangle.RenderTransform>
+                                    <TranslateTransform />
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                        </Grid>
+                        <Grid x:Name="VerticalTemplate" Margin="{StaticResource PhoneVerticalMargin}">
+                            <Rectangle x:Name="VerticalTrack"
+								Width="12"
+								Margin="18,0,18,0"
+								Fill="{TemplateBinding Background}"
+								IsHitTestVisible="False" />
+                            <Rectangle x:Name="VerticalFill"
+								Width="12"
+								Margin="18,0,18,0"
+								Fill="{Binding (controls:ThemeMainColorExtension.ThemeMainBrush), RelativeSource={RelativeSource TemplatedParent}}"
+								IsHitTestVisible="False">
+                                <Rectangle.Clip>
+                                    <RectangleGeometry Rect="0, 0, 12, 6" />
+                                </Rectangle.Clip>
+                            </Rectangle>
+                            <Rectangle x:Name="VerticalCenterElement"
+								Width="24"
+								Height="12"
+								Margin="12,0,12,0"
+								VerticalAlignment="Top"
+								Fill="{StaticResource PhoneForegroundBrush}">
+                                <Rectangle.RenderTransform>
+                                    <TranslateTransform />
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <ControlTemplate x:Key="ListPickerControlTemplate1" TargetType="toolkit:ListPicker">
+        <StackPanel>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="PickerStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Highlighted">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0"
+								Storyboard.TargetName="UserControl"
+								Storyboard.TargetProperty="Foreground">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneTextBoxForegroundBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Duration="0"
+								Storyboard.TargetName="Border"
+								Storyboard.TargetProperty="Background">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneTextBoxEditBackgroundColor}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Duration="0"
+								Storyboard.TargetName="Border"
+								Storyboard.TargetProperty="BorderBrush">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding (controls:ThemeMainColorExtension.ThemeMainBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0"
+								Storyboard.TargetName="Border"
+								Storyboard.TargetProperty="Background">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TransparentBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Duration="0"
+								Storyboard.TargetName="Border"
+								Storyboard.TargetProperty="BorderBrush">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Duration="0"
+								Storyboard.TargetName="UserControl"
+								Storyboard.TargetProperty="Foreground">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <ContentControl Margin="0 0 0 8"
+				HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+				Content="{TemplateBinding Header}"
+				ContentTemplate="{TemplateBinding HeaderTemplate}"
+				FontSize="{StaticResource PhoneFontSizeNormal}"
+				Foreground="{StaticResource PhoneSubtleBrush}" />
+            <Grid>
+                <Border x:Name="Border"
+					Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}"
+					BorderThickness="{TemplateBinding BorderThickness}">
+                    <UserControl x:Name="UserControl" Foreground="{TemplateBinding Foreground}">
+                        <StackPanel>
+                            <TextBlock x:Name="MultipleSelectionModeSummary" Margin="8 8 0 8" />
+                            <Canvas x:Name="ItemsPresenterHost" MinHeight="46">
+                                <ItemsPresenter x:Name="ItemsPresenter">
+                                    <ItemsPresenter.RenderTransform>
+                                        <TranslateTransform x:Name="ItemsPresenterTranslateTransform" />
+                                    </ItemsPresenter.RenderTransform>
+                                </ItemsPresenter>
+                            </Canvas>
+                        </StackPanel>
+                    </UserControl>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </ControlTemplate>
+
+    <Style TargetType="customControls:SingleStarControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="customControls:SingleStarControl">
+
+                    <Viewbox>
+                        <es:RegularPolygon Width="82.87"
+							Height="77.853"
+							Fill="{Binding GameResources.UnCheckedAreaGradientBrush, Source={StaticResource GameResourcesProvider}}"
+							InnerRadius="0.47211"
+							PointCount="5"
+							Stretch="Fill"
+							Stroke="Black"
+							UseLayoutRounding="False" />
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="levels:SelectLevelItem">
+        <Setter Property="Opacity" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="levels:SelectLevelItem">
+
+                    <Border x:Name="Border" BorderThickness="0" BorderBrush="{StaticResource PhoneDisabledBrush}"                            >
+                        <Border.CacheMode>
+                            <BitmapCache />
+                        </Border.CacheMode>
+                        <Border.RenderTransform>
+                            <ScaleTransform />
+                        </Border.RenderTransform>
+                        <Border.RenderTransformOrigin>
+                            <Point>0.5,0.5</Point>
+                        </Border.RenderTransformOrigin>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="States">
+                                <VisualState x:Name="LevelUnAvailable">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="EnabledGrid" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DisabledGrid" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="LevelAvailable" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AnimationStates">
+                                <VisualState x:Name="PlayAnimation">
+                                    <Storyboard>
+                                        <!--                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness">-->
+                                        <!--                                            <DiscreteObjectKeyFrame KeyTime="0" Value="3" />-->
+                                        <!--                                        </ObjectAnimationUsingKeyFrames>-->
+                                        <DoubleAnimation AutoReverse="True"
+											Duration="0:0:0.500"
+											RepeatBehavior="Forever"
+											Storyboard.TargetName="Border"
+											Storyboard.TargetProperty="Border.RenderTransform.ScaleX"
+											To="1.15">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuarticEase EasingMode="EaseOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+
+                                        <DoubleAnimation AutoReverse="True"
+											Duration="0:0:0.500"
+											RepeatBehavior="Forever"
+											Storyboard.TargetName="Border"
+											Storyboard.TargetProperty="Border.RenderTransform.ScaleY"
+											To="1.15">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuarticEase EasingMode="EaseOut" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="NoAnimation" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid>
+                            <clickSound:ClickSoundContentControl HorizontalContentAlignment="Stretch"
+								VerticalContentAlignment="Stretch"
+								Style="{StaticResource ClickSoundStyle}">
+
+                                <Grid x:Name="DisabledGrid"                                     
+									Visibility="Collapsed">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="3*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Border  Background="Gray">
+                                        <Viewbox Grid.Row="0">
+                                            <TextBlock VerticalAlignment="Top"
+												Foreground="WhiteSmoke"
+												Text="{TemplateBinding Text}"
+												TextAlignment="Center" />
+                                        </Viewbox>
+                                    </Border>
+                                    <Border Grid.Row="1" Background="{StaticResource PhoneChromeBrush}"/>
+                                    <!--  <Image x:Name="Image"  -->
+                                    <!--  Margin="20,20,20,20"  -->
+                                    <!--  HorizontalAlignment="Center"  -->
+                                    <!--  VerticalAlignment="Center"  -->
+                                    <!--  Source="{StaticResource LockedLightBitmapImage}"  -->
+                                    <!--  Stretch="Uniform" />  -->
+                                </Grid>
+                            </clickSound:ClickSoundContentControl>
+                            <clickSound:ClickSoundContentControl HorizontalContentAlignment="Stretch"
+								VerticalContentAlignment="Stretch"
+								toolkit:TiltEffect.IsTiltEnabled="True">
+
+                                <!--  Background="{Binding (controls:ThemeMainColorExtension.ThemeMainBrush),  -->
+                                <!--  ElementName=ListSelector}"  -->
+                                <!--                                </Border>-->
+                                <!--                                <Border BorderThickness="3" BorderBrush="{TemplateBinding Background}" >-->
+                                <Grid x:Name="EnabledGrid"  CacheMode="BitmapCache">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="3*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+
+                                    <Border Background="{TemplateBinding Background}">
+                                        <Viewbox Grid.Row="0">
+                                            <!--  Foreground="{Binding (controls:ThemeSecondColorExtension.ThemeSecondBrush),  -->
+                                            <!--  ElementName=ListSelector}"  -->
+                                            <TextBlock VerticalAlignment="Top"
+												Foreground="WhiteSmoke"
+												Text="{TemplateBinding Text}"
+												TextAlignment="Center" />
+                                        </Viewbox>
+                                    </Border>
+                                    <Border Grid.Row="1" Background="{StaticResource PhoneChromeBrush}">
+                                        <Viewbox Grid.Row="1">
+                                            <customControls:StarsControl Margin="0,2,0,4"
+												ShowStroke="False"
+												StarsCount="{TemplateBinding StarsCount}" />
+                                            <!--  <Image Source="{StaticResource StarBitmapImage}" />  -->
+                                        </Viewbox>
+                                    </Border>
+                                </Grid>
+                            </clickSound:ClickSoundContentControl>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ListBoxItemDynamicThemes" TargetType="ListBoxItem">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Border x:Name="LayoutRoot"
+						HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+						VerticalAlignment="{TemplateBinding VerticalAlignment}"
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						IsHitTestVisible="{Binding IsAvailable}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="LayoutRoot" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource TransparentBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimation Duration="0"
+											Storyboard.TargetName="ContentContainer"
+											Storyboard.TargetProperty="Opacity"
+											To=".5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected" />
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentContainer" Storyboard.TargetProperty="SolidColorBrush.Foreground.Color">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding GameResources.UnCheckedColor, Source={StaticResource GameResourcesProvider}}" />
+                                        </ObjectAnimationUsingKeyFrames>
+
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ContentControl x:Name="ContentContainer"
+							Margin="{TemplateBinding Padding}"
+							HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+							Content="{TemplateBinding Content}"
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							Foreground="{TemplateBinding Foreground}" />
+
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="CustomMessageBoxDynamicThemes" TargetType="toolkit:CustomMessageBox">
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilyNormal}" />
+        <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeNormal}" />
+        <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}" />
+        <Setter Property="Background" Value="{StaticResource PhoneChromeBrush}" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="toolkit:CustomMessageBox">
+                    <Grid HorizontalAlignment="Stretch" Background="{TemplateBinding Background}">
+                        <Grid Width="480" HorizontalAlignment="Left">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.ColumnSpan="2" Margin="0,0,0,18">
+                                <TextBlock x:Name="TitleTextBlock"
+									Margin="24,16,24,-6"
+									FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+									Foreground="{TemplateBinding Foreground}"
+									Text="{TemplateBinding Title}"
+									Visibility="Collapsed" />
+                                <TextBlock x:Name="CaptionTextBlock"
+									Margin="24,8,24,0"
+									HorizontalAlignment="Left"
+									FontFamily="{StaticResource PhoneFontFamilySemiBold}"
+									FontSize="{StaticResource PhoneFontSizeLarge}"
+									Foreground="{TemplateBinding Foreground}"
+									Text="{TemplateBinding Caption}"
+									TextWrapping="Wrap"
+									Visibility="Collapsed" />
+                                <TextBlock x:Name="MessageTextBlock"
+									Margin="24,11,24,0"
+									HorizontalAlignment="Left"
+									FontFamily="{StaticResource PhoneFontFamilySemiLight}"
+									FontSize="{StaticResource PhoneFontSizeMedium}"
+									Foreground="{TemplateBinding Foreground}"
+									Text="{TemplateBinding Message}"
+									TextWrapping="Wrap"
+									Visibility="Collapsed" />
+                                <ContentPresenter Margin="12,0,0,0" />
+                            </StackPanel>
+                            <Button x:Name="LeftButton"
+								Grid.Row="1"
+								Grid.Column="0"
+								Margin="12,0,0,12"
+								Content="{TemplateBinding LeftButtonContent}"
+								Foreground="{TemplateBinding Foreground}"
+								IsEnabled="{TemplateBinding IsLeftButtonEnabled}"
+								Style="{StaticResource ButtonStyleDynamicThemes}"
+								Visibility="Collapsed"
+								toolkit:TiltEffect.IsTiltEnabled="True" />
+                            <Button x:Name="RightButton"
+								Grid.Row="1"
+								Grid.Column="1"
+								Margin="0,0,12,12"
+								Content="{TemplateBinding RightButtonContent}"
+								Foreground="{TemplateBinding Foreground}"
+								IsEnabled="{TemplateBinding IsRightButtonEnabled}"
+								Style="{StaticResource ButtonStyleDynamicThemes}"
+								Visibility="Collapsed"
+								toolkit:TiltEffect.IsTiltEnabled="True" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ProgressBarDynamicThemes" TargetType="ProgressBar">
+        <Setter Property="Background" Value="{StaticResource PhoneProgressBarBackgroundBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Determinate" />
+                                <VisualState x:Name="Indeterminate">
+                                    <Storyboard Duration="00:00:00" RepeatBehavior="Forever">
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateRoot" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DeterminateRoot" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="DeterminateRoot"
+							Margin="{TemplateBinding Padding}"
+							Visibility="Visible">
+                            <Rectangle x:Name="ProgressBarTrack"
+								Height="{TemplateBinding Height}"
+								Fill="{TemplateBinding Background}" />
+                            <Rectangle x:Name="ProgressBarIndicator"
+								Height="{TemplateBinding Height}"
+								HorizontalAlignment="Left"
+								Fill="{TemplateBinding Foreground}" />
+                            <Border Height="{TemplateBinding Height}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								BorderThickness="{TemplateBinding BorderThickness}" />
+                        </Grid>
+                        <Border x:Name="IndeterminateRoot"
+							Margin="{TemplateBinding Padding}"
+							Visibility="Collapsed">
+                            <Grid x:Name="SliderContainer" IsHitTestVisible="False">
+                                <Rectangle x:Name="Slider0"
+									Width="4"
+									Height="4"
+									HorizontalAlignment="Left"
+									CacheMode="BitmapCache"
+									Fill="{TemplateBinding Foreground}" />
+                                <Rectangle x:Name="Slider1"
+									Width="4"
+									Height="4"
+									HorizontalAlignment="Left"
+									CacheMode="BitmapCache"
+									Fill="{TemplateBinding Foreground}" />
+                                <Rectangle x:Name="Slider2"
+									Width="4"
+									Height="4"
+									HorizontalAlignment="Left"
+									CacheMode="BitmapCache"
+									Fill="{TemplateBinding Foreground}" />
+                                <Rectangle x:Name="Slider3"
+									Width="4"
+									Height="4"
+									HorizontalAlignment="Left"
+									CacheMode="BitmapCache"
+									Fill="{TemplateBinding Foreground}" />
+                                <Rectangle x:Name="Slider4"
+									Width="4"
+									Height="4"
+									HorizontalAlignment="Left"
+									CacheMode="BitmapCache"
+									Fill="{TemplateBinding Foreground}" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="HyperlinkButtonDynamicThemes" TargetType="HyperlinkButton">
+        <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="HyperlinkButton">
+                    <Border Background="Transparent">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextElement" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding (controls:ThemeMainColorExtension.ThemeMainBrush), RelativeSource={RelativeSource TemplatedParent}}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="TextElement" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border Margin="{StaticResource PhoneHorizontalMargin}"
+							Background="{TemplateBinding Background}"
+							Padding="{TemplateBinding Padding}">
+                            <TextBlock x:Name="TextElement"
+								HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+								VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+								Text="{TemplateBinding Content}"
+								TextDecorations="Underline" />
+                        </Border>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TextBlockDynamicThemesSecondBrush" TargetType="TextBlock">
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <SolidColorBrush Color="{Binding (controls:ThemeSecondColorExtension.ThemeSecondColor)}" />
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+    <Style x:Key="TextBlockDynamicThemesMainBrush" TargetType="TextBlock">
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <SolidColorBrush Color="{Binding (controls:ThemeMainColorExtension.ThemeMainBrush)}" />
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style TargetType="popups:PopupWindowBase" x:Name="MainPopupStyle">
+        <Setter Property="HeaderBackgroundColor">
+            <Setter.Value>
+                <SolidColorBrush Color="{Binding (controls:ThemeAccentLightColorExtension.ThemeAccentLightColor), RelativeSource={RelativeSource TemplatedParent}}" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Converters:SolidColorBrushToColorConverter x:Key="BrushToBrush"/>
+    <SolidColorBrush x:Key="DefaultForegroundBrush" Color="{Binding Converter={StaticResource BrushToBrush}, Source={StaticResource PhoneForegroundBrush}}"/>
+    <FontFamily x:Key="FontFamilySegoeSemiBold">Segoe WP Semibold</FontFamily>
+    <SolidColorBrush x:Key="DefaultAccentBrush" Color="{Binding Converter={StaticResource BrushToBrush}, Source={StaticResource PhoneAccentBrush}}"/>
+    <System:Double x:Key="DefaultFontSizeExtraSmall">12</System:Double>
+    <System:Double x:Key="DefaultAppButtonSize">70</System:Double>
+    <Style x:Key="AppBarText" TargetType="ContentControl">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0"/>
+    </Style>
+    <SolidColorBrush x:Key="DefaultDisabledBrush" Color="{Binding Converter={StaticResource BrushToBrush}, Source={StaticResource PhoneDisabledBrush}}"/>
+    
+    <Style x:Key="RoundButtonStyleDynamicThemes" TargetType="Controls:RoundButton">
+        <Setter Property="BorderBrush" Value="{StaticResource DefaultForegroundBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource DefaultForegroundBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource FontFamilySegoeSemiBold}"/>
+        <Setter Property="PressedBrush" Value="{StaticResource DefaultAccentBrush}"/>
+        <Setter Property="FontSize" Value="{StaticResource DefaultFontSizeExtraSmall}"/>
+        <Setter Property="ButtonWidth" Value="{StaticResource DefaultAppButtonSize}"/>
+        <Setter Property="ButtonHeight" Value="{StaticResource DefaultAppButtonSize}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Controls:RoundButton">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver"/>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="ButtonBackground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding (controls:ThemeSecondColorExtension.ThemeSecondBrush), RelativeSource={RelativeSource TemplatedParent}}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Stroke" Storyboard.TargetName="ButtonRing">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DefaultDisabledBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Fill" Storyboard.TargetName="ButtonBackground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Transparent"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentBody">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DefaultDisabledBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="ContentTitle">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DefaultDisabledBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="EnabledBackground" BorderBrush="Transparent" BorderThickness="0" Background="Transparent" Padding="{TemplateBinding Padding}">
+                            <StackPanel Orientation="{TemplateBinding Orientation}">
+                                <Grid Height="{TemplateBinding ButtonHeight}" Margin="0,-10, 0, 0" Width="{TemplateBinding ButtonWidth}">
+                                    <Ellipse x:Name="ButtonBackground" Fill="{Binding (controls:ThemeAccentLightColorExtension.ThemeAccentLightBrush), RelativeSource={RelativeSource TemplatedParent}}" Margin="10" Stroke="Transparent"/>
+                                    <Grid x:Name="ContentHost">
+                                        <ContentControl x:Name="ContentBody" Content="{TemplateBinding Content}" Foreground="{Binding (controls:ThemeAccentDarkColorExtension.ThemeAccentDarkBrush), RelativeSource={RelativeSource TemplatedParent}}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                    </Grid>
+                                    <Ellipse x:Name="ButtonRing" Fill="Transparent" Margin="10" Stroke="{Binding (controls:ThemeAccentDarkColorExtension.ThemeAccentDarkBrush), RelativeSource={RelativeSource TemplatedParent}}"
+                                             StrokeThickness="4"/>
+                                </Grid>
+                                <ContentControl x:Name="ContentTitle" Content="{TemplateBinding Label}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" Style="{StaticResource AppBarText}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

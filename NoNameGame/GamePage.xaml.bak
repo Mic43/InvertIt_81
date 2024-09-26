@@ -1,0 +1,268 @@
+﻿<local:BasePage x:Class="NoNameGame.GamePage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:UI="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI"
+                xmlns:WindowsPhone8="clr-namespace:Microsoft.AdMediator.WindowsPhone8;assembly=Microsoft.AdMediator.WindowsPhone8"
+                xmlns:adRotator="clr-namespace:AdRotator;assembly=AdRotator"
+                xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:local="clr-namespace:NoNameGame"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                xmlns:googleAds="clr-namespace:GoogleAds;assembly=GoogleAds"
+                FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                FontSize="{StaticResource PhoneFontSizeNormal}"
+                Foreground="{StaticResource PhoneForegroundBrush}"
+                Orientation="Portrait"
+                SupportedOrientations="Portrait"
+                shell:SystemTray.IsVisible="False"
+                mc:Ignorable="d">
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <Grid x:Name="LayoutRoot" Margin="0,0,0,0" >       
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Height="80" Background="{StaticResource PhoneChromeBrush}">
+<!--            <googleAds:AdView AdUnitID="ca-app-pub-4997101767812389/5283567154" Format="SmartBanner" />-->
+
+            <!--            <customControls:AdControl Grid.Row="0" />-->
+            <WindowsPhone8:AdMediatorControl x:Name="AdMediatorControl" Id="AdMediator-Id-91A9EDF9-FE39-40E7-8DBC-0654E962043C" />
+        </Grid>
+
+        <Grid Grid.Row="1" Background="{StaticResource PhoneChromeBrush}">
+<!--            <Grid-->
+<!--                  Margin="9,0,9,0"-->
+<!--                  VerticalAlignment="Center">-->
+<!--                <Grid.ColumnDefinitions>-->
+<!--                    <ColumnDefinition Width="Auto" />-->
+<!--                    <ColumnDefinition />-->
+<!--                    <ColumnDefinition Width="Auto" />-->
+<!--                </Grid.ColumnDefinitions>-->
+<!--                <Grid.RowDefinitions>-->
+<!--                    <RowDefinition Height="Auto" />-->
+<!--                    <RowDefinition Height="Auto" />-->
+<!--                    <RowDefinition Height="Auto" />-->
+<!--                    <RowDefinition Height="Auto" />-->
+<!--                </Grid.RowDefinitions>-->
+<!---->
+<!--                <StackPanel  Orientation="Horizontal">-->
+<!--                    <TextBlock Name="LevelPackTextBlock" Foreground="#787878" FontWeight="SemiBold" />-->
+<!--                    <TextBlock Text=" - "></TextBlock>-->
+<!--                    <TextBlock Name="LevelGroupTextBlock" Foreground="#787878" FontWeight="SemiBold"/>-->
+<!--                </StackPanel>               -->
+<!--                <StackPanel Grid.RowSpan="1"-->
+<!--                            Grid.Row="1" Margin="0,-3,0,1"-->
+<!--                            Grid.Column="0"-->
+<!--                            HorizontalAlignment="Left"-->
+<!--                            VerticalAlignment="Center"-->
+<!--                            Orientation="Horizontal">-->
+<!--                    <TextBlock x:Name="LevelStaticText"-->
+<!--                               Margin="0"-->
+<!--                               VerticalAlignment="Center"-->
+<!--                               FontSize="60" -->
+<!--                              Foreground="#323232"                                  -->
+<!--                               Style="{StaticResource CustomHeadline1Font}"-->
+<!---->
+<!--                               Text="{Binding LocalizedResources.GamePage_LevelTextBlock,-->
+<!--                                          Source={StaticResource LocalizedStrings}}" />-->
+<!--                    <TextBlock x:Name="LevelTextBoxTextBlock"-->
+<!--                               Margin="0" -->
+<!--                         -->
+<!--                                 Foreground="#323232"       -->
+<!--                               VerticalAlignment="Center"-->
+<!--                               FontSize="60"-->
+<!--                              -->
+<!--                               Style="{StaticResource CustomHeadline1Font}" />-->
+<!--                </StackPanel>-->
+<!--~1~                Foreground="{Binding GameResources.CheckedAreaGradientBrush,@1@-->
+<!--~1~                                                Source={StaticResource GameResourcesProvider}}"@1@-->
+<!---->
+<!--~1~                Foreground="{Binding GameResources.UnCheckedAreaGradientBrush,@1@-->
+<!--~1~                                                Source={StaticResource GameResourcesProvider}}"@1@-->
+<!--                <StackPanel x:Name="MiniGrid"-->
+<!--                            Grid.RowSpan="4"-->
+<!--                            Grid.Column="1"-->
+<!--                            Margin="0,6,0,0"-->
+<!--                            HorizontalAlignment="Right"-->
+<!--                            VerticalAlignment="Center"-->
+<!--                            Orientation="Vertical">-->
+<!--                    <TextBlock x:Name="GoalTextBlock"-->
+<!--                               Margin="0,0,0,12"-->
+<!--                               HorizontalAlignment="Center"-->
+<!--                               VerticalAlignment="Bottom"-->
+<!--                               FontFamily="Segoe WP Semibold"-->
+<!--                               Foreground="#787878"-->
+<!--                               Style="{StaticResource PhoneTextNormalStyle}"-->
+<!--                               Text="{Binding LocalizedResources.MainPage_GoaltextBlock,-->
+<!--                                          Source={StaticResource LocalizedStrings}}" />-->
+<!---->
+<!--                </StackPanel>-->
+<!--                <StackPanel Grid.Row="2" Name="MovesCountPanel"-->
+<!--                            Grid.Column="0"-->
+<!--                            HorizontalAlignment="Left"-->
+<!--                            VerticalAlignment="Center"-->
+<!--                            Orientation="Horizontal">-->
+<!--                    <TextBlock Margin="0,0,0,0"-->
+<!--                               VerticalAlignment="Center"-->
+<!--                              -->
+<!--                               Foreground="#787878"-->
+<!--                               Style="{StaticResource PhoneTextNormalStyle}"-->
+<!--                               Text="{Binding LocalizedResources.GamePage_MovesTextBlock,-->
+<!--                                          Source={StaticResource LocalizedStrings}}" />-->
+<!--                    <TextBlock x:Name="MovesCounTextBlock"-->
+<!--                               Margin="0"-->
+<!--                               VerticalAlignment="Center"-->
+<!--                              -->
+<!--                               Foreground="#787878"-->
+<!--                               Style="{StaticResource PhoneTextNormalStyle}" />-->
+<!--                </StackPanel>-->
+<!--                <StackPanel Grid.Row="3"-->
+<!--                            Grid.Column="0"-->
+<!--                            HorizontalAlignment="Left"-->
+<!--                            VerticalAlignment="Center"-->
+<!--                            Orientation="Horizontal">-->
+<!--                    <TextBlock Margin="0,0,0,0"-->
+<!--                               VerticalAlignment="Center"-->
+<!--                              -->
+<!--                               Foreground="#787878"-->
+<!--                               Style="{StaticResource PhoneTextNormalStyle}"-->
+<!--                               Text="{Binding LocalizedResources.GamePage_PerfectTextBlock,-->
+<!--                                          Source={StaticResource LocalizedStrings}}" />-->
+<!--                    <TextBlock x:Name="PerfectMovesCounTextBlock"-->
+<!--                               Margin="0"-->
+<!--                               VerticalAlignment="Center"                               -->
+<!--                               Foreground="#787878"-->
+<!--                               Style="{StaticResource PhoneTextNormalStyle}" />-->
+<!--                </StackPanel>-->
+<!---->
+<!--            </Grid>-->
+            <Grid  Margin="0,18,0,0" VerticalAlignment="Center">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+
+                    <StackPanel Grid.Row="0" Grid.Column="0" Background="{StaticResource PhoneBackgroundBrush}">
+                        <StackPanel       Margin="6,6,0,0"                    
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <TextBlock x:Name="LevelStaticText"
+                                       Margin="0"
+                                       VerticalAlignment="Center"
+                                       FontSize="30"
+                                       Foreground="#787878"
+                                       Style="{StaticResource CustomHeadline1Font}"
+
+                                       Text="{Binding LocalizedResources.GamePage_LevelTextBlock,
+                                          Source={StaticResource LocalizedStrings}}" />
+                            <TextBlock x:Name="LevelTextBoxTextBlock"
+                                       Margin="0"
+                                       Foreground="#787878"
+                                       VerticalAlignment="Center"
+                                       FontSize="30"
+
+                                       Style="{StaticResource CustomHeadline1Font}" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="6,0,0,6">
+                            <TextBlock Name="LevelPackTextBlock" Foreground="#787878" FontWeight="SemiBold" />
+                            <TextBlock Text=" - "></TextBlock>
+                            <TextBlock Name="LevelGroupTextBlock" Foreground="#787878" FontWeight="SemiBold" />
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" VerticalAlignment="Top" Grid.Column="0" Margin="6,3,6,6" Orientation="Horizontal">
+                        
+                        <StackPanel Grid.Row="2" Name="MovesCountPanel"
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                            <TextBlock Margin="0,0,0,0"
+                                       VerticalAlignment="Center"
+
+                                       Foreground="#787878"
+                                       Style="{StaticResource PhoneTextNormalStyle}"
+                                       Text="{Binding LocalizedResources.GamePage_MovesTextBlock,
+                                                              Source={StaticResource LocalizedStrings}}" />
+                            <TextBlock x:Name="MovesCounTextBlock"
+                                       Margin="0"
+                                       VerticalAlignment="Center"
+
+                                       Foreground="#787878"
+                                       Style="{StaticResource PhoneTextNormalStyle}" />
+                        </StackPanel>
+                        <StackPanel  Margin="6,0,0,0"                                    
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                            <TextBlock Margin="0,0,0,0"
+                                       VerticalAlignment="Center"
+
+                                       Foreground="#787878"
+                                       Style="{StaticResource PhoneTextNormalStyle}"
+                                       Text="{Binding LocalizedResources.GamePage_PerfectTextBlock,
+                                                              Source={StaticResource LocalizedStrings}}" />
+                            <TextBlock x:Name="PerfectMovesCounTextBlock"
+                                       Margin="0"
+                                       VerticalAlignment="Center"
+                                       Foreground="#787878"
+                                       Style="{StaticResource PhoneTextNormalStyle}" />
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel x:Name="MiniGrid" Background="{StaticResource PhoneBackgroundBrush}"
+                                Grid.Row="0"  Grid.RowSpan="2"
+                                                    Grid.Column="1"                                                    
+                                                    HorizontalAlignment="Center"
+                                                    VerticalAlignment="Top"
+                                                    Orientation="Vertical">
+
+                    </StackPanel>
+
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2" Name="Grid"
+               Background="{StaticResource PhoneChromeBrush}"
+                Height="{Binding ActualWidth,
+                                 ElementName=Grid}"
+              >
+            <Grid x:Name="ContentPanel" Margin="0,0,0,0"  Background="{StaticResource PhoneBackgroundBrush}"
+             
+                
+                
+                   
+                 />
+        </Grid>
+    </Grid>
+</local:BasePage>

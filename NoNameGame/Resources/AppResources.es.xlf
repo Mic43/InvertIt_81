@@ -1,0 +1,704 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="es" original="AppResources.resx" tool-id="MultilingualAppToolkit" product-name="NoNameGame" product-version="1.2.0.0" build-num="0">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="3.1.1250.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="Resx">
+        <trans-unit id="Resx/ResourceFlowDirection" translate="yes" xml:space="preserve">
+          <source>LeftToRight</source>
+          <target state="translated">LeftToRight</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</note>
+          </trans-unit>
+        <trans-unit id="Resx/ResourceLanguage" translate="yes" xml:space="preserve">
+          <source>en-US</source>
+          <target state="translated">es</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</note>
+          </trans-unit>
+        <trans-unit id="Resx/ApplicationTitle_CAPITAL" translate="no" xml:space="preserve">
+          <source>INVERT IT!</source>
+          <target state="translated">INVERT IT!</target>
+        </trans-unit>
+        <trans-unit id="Resx/ApplicationTitle_Normal" translate="no" xml:space="preserve">
+          <source>invert it!</source>
+          <target state="translated">invert it!</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsPage_Title" translate="yes" xml:space="preserve">
+          <source>settings</source>
+          <target state="translated">configuración</target>
+        </trans-unit>
+        <trans-unit id="Resx/UnlocksPage_Title" translate="yes" xml:space="preserve">
+          <source>UNLOCKS</source>
+          <target state="translated">DESBLOQUEOS</target>
+        </trans-unit>
+        <trans-unit id="Resx/ThemesPivotItem_Title" translate="yes" xml:space="preserve">
+          <source>themes</source>
+          <target state="translated">temas</target>
+        </trans-unit>
+        <trans-unit id="Resx/AnimationsPivotItem_Title" translate="yes" xml:space="preserve">
+          <source>animations</source>
+          <target state="translated">animaciones</target>
+        </trans-unit>
+        <trans-unit id="Resx/ThemesPage_Description" translate="yes" xml:space="preserve">
+          <source>choose your favorite colors!</source>
+          <target state="translated">¡seleccione sus colores favoritos!</target>
+        </trans-unit>
+        <trans-unit id="Resx/AnimationsPage_Description" translate="yes" xml:space="preserve">
+          <source>select ingame periodical animation</source>
+          <target state="translated">seleccione una animación periodica en el juego</target>
+        </trans-unit>
+        <trans-unit id="Resx/MainPage_NewGame_Title" translate="yes" xml:space="preserve">
+          <source>new game</source>
+          <target state="translated">nueva partida</target>
+        </trans-unit>
+        <trans-unit id="Resx/MainPage_Dashboard_Title" translate="yes" xml:space="preserve">
+          <source>dashboard</source>
+          <target state="translated">tablero</target>
+        </trans-unit>
+        <trans-unit id="Resx/MainPage_About_Title" translate="yes" xml:space="preserve">
+          <source>about</source>
+          <target state="translated">a cerca de</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_LevelTextBlock" translate="yes" xml:space="preserve">
+          <source>LEVEL </source>
+          <target state="translated">NIVEL </target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_MovesTextBlock" translate="yes" xml:space="preserve">
+          <source>moves: </source>
+          <target state="translated">movimientos: </target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_PerfectTextBlock" translate="yes" xml:space="preserve">
+          <source>perfect: </source>
+          <target state="translated">perfecto: </target>
+        </trans-unit>
+        <trans-unit id="Resx/MainPage_GoaltextBlock" translate="yes" xml:space="preserve">
+          <source>goal:</source>
+          <target state="translated">meta:</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_AppBar_Undo" translate="yes" xml:space="preserve">
+          <source>undo</source>
+          <target state="translated">deshacer</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_AppBar_Redo" translate="yes" xml:space="preserve">
+          <source>redo</source>
+          <target state="translated">rehacer</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingPage_SoundSwitch_Header" translate="yes" xml:space="preserve">
+          <source>Sound</source>
+          <target state="translated">Sonido</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsPage_SoundVolumeTextBlock" translate="yes" xml:space="preserve">
+          <source>Master volume</source>
+          <target state="translated">Volumen principal</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsPage_VibrationSwitch_Header" translate="yes" xml:space="preserve">
+          <source>Vibration</source>
+          <target state="translated">Vibración</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsPage_ResetProgressButton_Content" translate="yes" xml:space="preserve">
+          <source>reset progress</source>
+          <target state="translated">reinicializar progreso</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameWonPopup_NewItemUnlocked" translate="yes" xml:space="preserve">
+          <source>New theme unlocked!</source>
+          <target state="translated">¡Nuevo tema desbloqueado!</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameWonPopup_NextLevelButton" translate="yes" xml:space="preserve">
+          <source>Next level</source>
+          <target state="translated">Siguiente nivel</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameWonPopup_RestartLevelButton" translate="yes" xml:space="preserve">
+          <source>Restart level</source>
+          <target state="translated">Reiniciar nivel</target>
+        </trans-unit>
+        <trans-unit id="Resx/About_FeedbackButton" translate="yes" xml:space="preserve">
+          <source>send feedback</source>
+          <target state="translated">Envíe comentarios</target>
+        </trans-unit>
+        <trans-unit id="Resx/HelpPage_Title" translate="yes" xml:space="preserve">
+          <source>help</source>
+          <target state="translated">ayuda</target>
+        </trans-unit>
+        <trans-unit id="Resx/Tutorial_Page1_Text2" translate="yes" xml:space="preserve">
+          <source>on the dot to invert its neighbours.</source>
+          <target state="translated">en el punto para invertir sus vecinos.</target>
+        </trans-unit>
+        <trans-unit id="Resx/AboutPage_TextBlockRate" translate="yes" xml:space="preserve">
+          <source>rate:</source>
+          <target state="translated">calificar:</target>
+        </trans-unit>
+        <trans-unit id="Resx/AboutPage_TextBlock_Share" translate="yes" xml:space="preserve">
+          <source>share:</source>
+          <target state="translated">compartir:</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameMarketPlaceUrl" translate="no" xml:space="preserve">
+          <source>http://www.windowsphone.com/pl-pl/store/app/</source>
+          <target state="new">http://www.windowsphone.com/pl-pl/store/app/</target>
+        </trans-unit>
+        <trans-unit id="Resx/AboutPage_ShareTaskTitle" translate="yes" xml:space="preserve">
+          <source>Check out {0} for Windows Phone!</source>
+          <target state="translated">Echa un vistazo a {0} para Windows Phone!</target>
+        </trans-unit>
+        <trans-unit id="Resx/AboutPage_SendFeedback_EmailTitle" translate="yes" xml:space="preserve">
+          <source>Game feedback</source>
+          <target state="translated">Comentar sobre el Juego</target>
+        </trans-unit>
+        <trans-unit id="Resx/Tutorial_Page1_Text1" translate="yes" xml:space="preserve">
+          <source>Tap</source>
+          <target state="translated">Pulse</target>
+        </trans-unit>
+        <trans-unit id="Resx/ThemesPage_Title" translate="yes" xml:space="preserve">
+          <source>themes</source>
+          <target state="translated">temas</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_ResetMenuItem_Text" translate="yes" xml:space="preserve">
+          <source>restart</source>
+          <target state="translated">reanudar</target>
+        </trans-unit>
+        <trans-unit id="Resx/DashboardList_ThemesTitle" translate="yes" xml:space="preserve">
+          <source>themes</source>
+          <target state="translated">temas</target>
+        </trans-unit>
+        <trans-unit id="Resx/DashboardList_ThemesDescription" translate="yes" xml:space="preserve">
+          <source>select your favorite colors!</source>
+          <target state="translated">¡seleccione sus colores favoritos!</target>
+        </trans-unit>
+        <trans-unit id="Resx/DashboardList_SettingsTitle" translate="yes" xml:space="preserve">
+          <source>settings</source>
+          <target state="translated">configuración</target>
+        </trans-unit>
+        <trans-unit id="Resx/DashboardList_SettingsDescription" translate="yes" xml:space="preserve">
+          <source>customize application settings</source>
+          <target state="translated">personalizar la configuración</target>
+        </trans-unit>
+        <trans-unit id="Resx/DashboardList_HelpTitle" translate="yes" xml:space="preserve">
+          <source>help</source>
+          <target state="translated">ayuda</target>
+        </trans-unit>
+        <trans-unit id="Resx/DashboardList_Helpescription" translate="yes" xml:space="preserve">
+          <source>how to play</source>
+          <target state="translated">cómo jugar</target>
+        </trans-unit>
+        <trans-unit id="Resx/About_VersionTextBlock" translate="yes" xml:space="preserve">
+          <source>version</source>
+          <target state="translated">versión</target>
+        </trans-unit>
+        <trans-unit id="Resx/ThemesPage_PlayerStars_Text" translate="yes" xml:space="preserve">
+          <source>You have</source>
+          <target state="translated">Tienes</target>
+        </trans-unit>
+        <trans-unit id="Resx/OnOffConverter_Convert_On" translate="yes" xml:space="preserve">
+          <source>On</source>
+          <target state="translated">Activado</target>
+        </trans-unit>
+        <trans-unit id="Resx/OnOffConverter_Convert_Off" translate="yes" xml:space="preserve">
+          <source>Off</source>
+          <target state="translated">Desactivado</target>
+        </trans-unit>
+        <trans-unit id="Resx/HelpPage_RulesTitle" translate="yes" xml:space="preserve">
+          <source>Rules</source>
+          <target state="translated">Reglas</target>
+        </trans-unit>
+        <trans-unit id="Resx/HelpPage_Rules_TextBox" translate="yes" xml:space="preserve">
+          <source>Board consists of dots of two colors. When a dot is tapped all neighbouring dots get inverted, changing color.</source>
+          <target state="translated">El tablero consiste en puntos de dos colores. Cuando se pulse un punto, todos los puntos adyacentes se invierten y cambian de color.</target>
+        </trans-unit>
+        <trans-unit id="Resx/HelpPage_Goal_Title" translate="yes" xml:space="preserve">
+          <source>Goal</source>
+          <target state="translated">Meta</target>
+        </trans-unit>
+        <trans-unit id="Resx/HelpPage_GoalTextBlock" translate="yes" xml:space="preserve">
+          <source>To complete each level you must change all dots to the one, "goal" color. It is visible all the time during the game.</source>
+          <target state="translated">Para completar cada nivel debes cambiar todos los puntos a un color, el color de la "meta". Es visible todo el tiempo durante el juego.</target>
+        </trans-unit>
+        <trans-unit id="Resx/HelpPage_Stars_Title" translate="yes" xml:space="preserve">
+          <source>Stars</source>
+          <target state="translated">Estrellas</target>
+        </trans-unit>
+        <trans-unit id="Resx/HelpPage_Stars_TextBlock1" translate="yes" xml:space="preserve">
+          <source>Each level can be completed with a number of moves (taps). The less moves are made the more stars will be awarded for completing it.</source>
+          <target state="translated">Cada uno de los niveles puede ser completado con un número de  jugadas (pulsaciones). Cuantas menos jugadas sean realizadas, más estrellas se concederán al completarlo.</target>
+        </trans-unit>
+        <trans-unit id="Resx/HelpPage_Stars_TextBlock2" translate="yes" xml:space="preserve">
+          <source>Stars can be used to unlock colorful themes.</source>
+          <target state="translated">Se puede utilizar las estrellas para desbloquear temas coloridos.</target>
+        </trans-unit>
+        <trans-unit id="Resx/HelpPage_Stars_TextBlock3" translate="yes" xml:space="preserve">
+          <source>Can You unlock them all?</source>
+          <target state="translated">¿Puedes desbloquearlos todos?</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorial_Header" translate="yes" xml:space="preserve">
+          <source>HOW TO PLAY</source>
+          <target state="translated">COMO JUGAR</target>
+        </trans-unit>
+        <trans-unit id="Resx/PointsToHeaderConverter_Convert_Perfect" translate="yes" xml:space="preserve">
+          <source>PERFECT!</source>
+          <target state="translated">¡PERFECTO!</target>
+        </trans-unit>
+        <trans-unit id="Resx/PointsToHeaderConverter_Convert_Good" translate="yes" xml:space="preserve">
+          <source>CLEARED!</source>
+          <target state="translated">¡DESPEJADO!</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorial_Step2_TextBlock1" translate="yes" xml:space="preserve">
+          <source>Level is</source>
+          <target state="translated">El nivel es</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorial_Step2_TextBlock2" translate="yes" xml:space="preserve">
+          <source> completed</source>
+          <target state="translated">completado</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorial_Step2_TextBlock3" translate="yes" xml:space="preserve">
+          <source> when You change all dots to the one</source>
+          <target state="translated">cuando se cambia todos los puntos a la</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorial_Step2_TextBlock4" translate="yes" xml:space="preserve">
+          <source> color.</source>
+          <target state="translated">color.</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorial_Step3_TextBLock1" translate="yes" xml:space="preserve">
+          <source>The less moves</source>
+          <target state="translated">Cuanto menos cantidad de movimientos</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorial_Step3_TextBLock2" translate="yes" xml:space="preserve">
+          <source> You make to finish a level...</source>
+          <target state="translated">realices para finalizar un nivel...</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorial_Step3_TextBLock3" translate="yes" xml:space="preserve">
+          <source>...the more stars</source>
+          <target state="translated">...mas estrellas</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorial_Step3_TextBLock4" translate="yes" xml:space="preserve">
+          <source>You get!</source>
+          <target state="translated">obtendrás!</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorial_Step3_TextBLock5" translate="yes" xml:space="preserve">
+          <source>Use stars</source>
+          <target state="translated">Use las estrellas</target>
+        </trans-unit>
+        <trans-unit id="Resx/MainPage_MoreLevelsBaner" translate="yes" xml:space="preserve">
+          <source>More levels coming soon!</source>
+          <target state="translated">¡Mas niveles próximamente!</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePaused_Title" translate="yes" xml:space="preserve">
+          <source>GAME PAUSED</source>
+          <target state="translated">PAUSA</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePaused_ResumeButton_Content" translate="yes" xml:space="preserve">
+          <source>Resume</source>
+          <target state="translated">Reanudar</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Kontynuuj</note>
+          </trans-unit>
+        <trans-unit id="Resx/GamePaused_Button_Levels" translate="yes" xml:space="preserve">
+          <source>Levels</source>
+          <target state="translated">Niveles</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameWon_LevelsButton_Content" translate="yes" xml:space="preserve">
+          <source>Levels</source>
+          <target state="translated">Niveles</target>
+        </trans-unit>
+        <trans-unit id="Resx/Dashboard_IsNewTextBlock_Text" translate="yes" xml:space="preserve">
+          <source>new!</source>
+          <target state="translated">¡nueva!</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorialStep2_GoalTextBlock" translate="yes" xml:space="preserve">
+          <source>, specific</source>
+          <target state="translated"> específico</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsControl_ResetProgressMessageBox_Caption" translate="yes" xml:space="preserve">
+          <source>Reset progress</source>
+          <target state="translated">Reinicializar Progresos</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsControl_ResetProgressMessageBox_Mesage" translate="yes" xml:space="preserve">
+          <source>Are you sure you want to reset all the progress? This include levels and unlocked content.</source>
+          <target state="translated">¿Esta seguro de reinicializar todo su progreso? Esto incluye los niveles y el contenido desbloqueado.</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsControl_ResetProgressMessageBox_ButtonYes" translate="yes" xml:space="preserve">
+          <source>yes</source>
+          <target state="translated">sí</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsControl_ResetProgressMessageBox_ButtonNo" translate="yes" xml:space="preserve">
+          <source>no</source>
+          <target state="translated">no</target>
+        </trans-unit>
+        <trans-unit id="Resx/Dashboard_GameProgres_TextBlock" translate="yes" xml:space="preserve">
+          <source>game progress:</source>
+          <target state="translated">progreso en el juego:</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_ApplicationBar_Undo" translate="yes" xml:space="preserve">
+          <source>undo</source>
+          <target state="translated">deshacer</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_ApplicationBar_Redo" translate="yes" xml:space="preserve">
+          <source>redo</source>
+          <target state="translated">rehacer</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_ApplicationBar_Restart" translate="yes" xml:space="preserve">
+          <source>restart</source>
+          <target state="translated">reanudar</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_ApplicationBar_Themes" translate="yes" xml:space="preserve">
+          <source>themes</source>
+          <target state="translated">temas</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_ApplicationBar_Settings" translate="yes" xml:space="preserve">
+          <source>settings</source>
+          <target state="translated">configuración</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameWonControl_MovesDescriptionTextBlock" translate="yes" xml:space="preserve">
+          <source>You completed the level in</source>
+          <target state="translated">Has completo el nivel en</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameWonControl_MovesCaptionMany" translate="yes" xml:space="preserve">
+          <source>moves</source>
+          <target state="translated">movimientos</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameWonControlModel_MovesCountCaption_Single" translate="yes" xml:space="preserve">
+          <source>move</source>
+          <target state="translated">movimiento</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorial_Step3_TextBlock6" translate="yes" xml:space="preserve">
+          <source>to unlock</source>
+          <target state="translated">para desbloquear</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorialControl_Step3_TextBlock7" translate="yes" xml:space="preserve">
+          <source>many colorful</source>
+          <target state="translated">muchos coloridos</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorialControl_Step3_TextBlock8" translate="yes" xml:space="preserve">
+          <source>themes</source>
+          <target state="translated">temas</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorialControl_Step3_TextBlock9" translate="yes" xml:space="preserve">
+          <source>button</source>
+          <target state="translated">botón</target>
+        </trans-unit>
+        <trans-unit id="Resx/AboutPage_LikeUsButton" translate="yes" xml:space="preserve">
+          <source>Like us!</source>
+          <target state="translated">me gusta!</target>
+        </trans-unit>
+        <trans-unit id="Resx/CreditsPage_Title" translate="yes" xml:space="preserve">
+          <source>Credits</source>
+          <target state="translated">Créditos</target>
+        </trans-unit>
+        <trans-unit id="Resx/AboutPage_CreditsButton" translate="yes" xml:space="preserve">
+          <source>Credits</source>
+          <target state="translated">Créditos</target>
+        </trans-unit>
+        <trans-unit id="Resx/SettingsPage_MusicSwitch_Header" translate="yes" xml:space="preserve">
+          <source>Menu music</source>
+          <target state="translated">Música de menú</target>
+        </trans-unit>
+        <trans-unit id="Resx/UpdateLiveTileGameWonAction_BackTitle" translate="yes" xml:space="preserve">
+          <source>Game progress</source>
+          <target state="translated">Progreso del juego</target>
+        </trans-unit>
+        <trans-unit id="Resx/UpdateLiveTileGameWonAction_BackContent_Temp" translate="yes" xml:space="preserve">
+          <source>Have you played today?</source>
+          <target state="translated">¿Has jugado hoy?</target>
+        </trans-unit>
+        <trans-unit id="Resx/UpdateLiveTileGameWonAction_BackTitle_Temp" translate="yes" xml:space="preserve">
+          <source>You earned {0} stars in last game.</source>
+          <target state="translated">Ganaste {0} estrellas en el último juego.</target>
+        </trans-unit>
+        <trans-unit id="Resx/AskForRating_Content" translate="yes" xml:space="preserve">
+          <source>We'd love You to rate our game 5 stars. Your feedback help us to continue work on the app, and make it better!</source>
+          <target state="translated">Nos gustaría que calificaras nuestro juego con 5 estrellas. ¡Sus comentarios nos ayudan a trabajar en la aplicación, y hacerla mejor!</target></trans-unit>
+        <trans-unit id="Resx/AskForRating_Title" translate="yes" xml:space="preserve">
+          <source>RATE US!</source>
+          <target state="translated">¡EVALUANOS!</target></trans-unit>
+        <trans-unit id="Resx/SendToastHandler_Title" translate="yes" xml:space="preserve">
+          <source>Achievement unlocked!</source>
+          <target state="translated">¡Logro desbloqueado!</target>
+        </trans-unit>
+        <trans-unit id="Resx/DashboardList_AchievementsTitle" translate="yes" xml:space="preserve">
+          <source>achievements</source>
+          <target state="translated">logros</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_ApplicationBar_Achievements" translate="yes" xml:space="preserve">
+          <source>achievements</source>
+          <target state="translated">logros</target>
+        </trans-unit>
+        <trans-unit id="Resx/AchievementsPage_Title" translate="yes" xml:space="preserve">
+          <source>achievements</source>
+          <target state="translated">logros</target>
+        </trans-unit>
+        <trans-unit id="Resx/DashBoardList_AchievementsDescription" translate="yes" xml:space="preserve">
+          <source>ready for a challange?</source>
+          <target state="translated">¿listo para un nuevo reto?</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_TotalMoveCount" translate="yes" xml:space="preserve">
+          <source>Perform 500 moves.</source>
+          <target state="translated">Efectúe 500 movimientos.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_TotalInvertCount" translate="yes" xml:space="preserve">
+          <source>Invert 10000 dots.</source>
+          <target state="translated">Invierta 10000 puntos.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_TotalGameTime" translate="yes" xml:space="preserve">
+          <source>Play for 90 minutes total.</source>
+          <target state="translated">Juega por 90 minutos en total.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_GameTime1" translate="yes" xml:space="preserve">
+          <source>Complete a level in less than 5 seconds on easy level group.</source>
+          <target state="translated">Complete un nivel en menos de 5 segundos en el grupo de niveles fáciles.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_GameTime2" translate="yes" xml:space="preserve">
+          <source>Complete a level in less than 7 seconds on medium level group.</source>
+          <target state="translated">Complete un nivel en menos de 7 segundos en el grupo de niveles medios.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_GameTime3" translate="yes" xml:space="preserve">
+          <source>Complete a level in less than 10 seconds on hard level group.</source>
+          <target state="translated">Complete un nivel en menos de 10 segundos en el grupo de niveles difíciles.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_TutorialFinished" translate="yes" xml:space="preserve">
+          <source>Complete tutorial.</source>
+          <target state="translated">Complete tutorial.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_WarmupFinished" translate="yes" xml:space="preserve">
+          <source>Complete warmup.</source>
+          <target state="translated">Complete calentamiento.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_EasyFinished" translate="yes" xml:space="preserve">
+          <source>Complete easy level group.</source>
+          <target state="translated">Complete el grupo de niveles fáciles.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_MediumFinished" translate="yes" xml:space="preserve">
+          <source>Complete medium level group.</source>
+          <target state="translated">Complete el grupo de niveles medios.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_HardFinished" translate="yes" xml:space="preserve">
+          <source>Complete hard level group.</source>
+          <target state="translated">Complete el grupo de niveles difíciles.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_PerfectCount1" translate="yes" xml:space="preserve">
+          <source>Complete 50 levels with perfect status.</source>
+          <target state="translated">Complete 50 niveles con estatus perfecto.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_PerfectCount2" translate="yes" xml:space="preserve">
+          <source>Complete 100 levels with perfect status.</source>
+          <target state="translated">Complete 100 niveles con estatus perfecto.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_PerfectCount3" translate="yes" xml:space="preserve">
+          <source>Complete 150 levels with perfect status.</source>
+          <target state="translated">Complete 150 niveles con estatus perfecto.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_WonStreak1" translate="yes" xml:space="preserve">
+          <source>Have a streak of 5, perfect wins on easy level group.</source>
+          <target state="translated">Ten una racha de 5 victorias perfectas en el grupo de niveles fáciles.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_WonStreak2" translate="yes" xml:space="preserve">
+          <source>Have a streak of 5, perfect wins on medium level group.</source>
+          <target state="translated">Ten una racha de 5 victorias perfectas en el grupo de niveles medios.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_WonStreak3" translate="yes" xml:space="preserve">
+          <source>Have a streak of 5, perfect wins on hard level group.</source>
+          <target state="translated">Ten una racha de 5 victorias perfectas en el grupo de niveles difíciles.</target>
+        </trans-unit>
+        <trans-unit id="Resx/SingleAchievemenControl_TextBlock_Incomplete" translate="yes" xml:space="preserve">
+          <source>Incomplete</source>
+          <target state="translated">Incompleto</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_EasyFinished_Name" translate="yes" xml:space="preserve">
+          <source>Journeyman</source>
+          <target state="translated">Oficial</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_GameTime2_Name" translate="yes" xml:space="preserve">
+          <source>Lightning fast</source>
+          <target state="translated">A velocidad del rayo</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_GameTime3_Name" translate="yes" xml:space="preserve">
+          <source>Ruler of the time</source>
+          <target state="translated">Regla del tiempo</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_HardFinished_Name" translate="yes" xml:space="preserve">
+          <source>Master</source>
+          <target state="translated">Maestro</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_MeiumFinished_Name" translate="yes" xml:space="preserve">
+          <source>Scholar</source>
+          <target state="translated">Erudito</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_PerfectCount1_Finished" translate="yes" xml:space="preserve">
+          <source>Pioneer</source>
+          <target state="translated">Pionero</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_PerfectCount2_Finished" translate="yes" xml:space="preserve">
+          <source>Seeker of the ideal</source>
+          <target state="translated">Buscador del ideal</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_PerfectCount3_Finished" translate="yes" xml:space="preserve">
+          <source>Perfectionist</source>
+          <target state="translated">Perfeccionista</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_TotalGameTime_Name" translate="yes" xml:space="preserve">
+          <source>The longest journey</source>
+          <target state="translated">La travesía más larga</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_TotalMoveCount_Name" translate="yes" xml:space="preserve">
+          <source>Taps Emperor</source>
+          <target state="translated">El Emperador de las pulsaciones</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_TutorialFinished_Name" translate="yes" xml:space="preserve">
+          <source>Rookie</source>
+          <target state="translated">Novato</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_WarmupFinished_Name" translate="yes" xml:space="preserve">
+          <source>Apprentice</source>
+          <target state="translated">Aprendiz</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_WonStreak1_Name" translate="yes" xml:space="preserve">
+          <source>Steady</source>
+          <target state="translated">Constante</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_WonStreak2_Name" translate="yes" xml:space="preserve">
+          <source>Rock solid</source>
+          <target state="translated">Roca sólida</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_WonStreak3_Name" translate="yes" xml:space="preserve">
+          <source>Irresistible</source>
+          <target state="translated">Irresistible</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_ApplicaitonBar_Next_level" translate="yes" xml:space="preserve">
+          <source>Next level</source>
+          <target state="translated">Siguiente nivel</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorialStep3_Text2_Disabled" translate="yes" xml:space="preserve">
+          <source>blocks do nothing when tapped and cannot be inverted.</source>
+          <target state="translated">los bloques no hacen nada cuando son pulsados y nunca son inviertidos.</target></trans-unit>
+        <trans-unit id="Resx/GameTutorialStep3_Text2_Disabled_Prefix" translate="yes" xml:space="preserve">
+          <source>Disabled </source>
+          <target state="translated">Deshabilitado</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorialStep4_Text1_Prefix" translate="yes" xml:space="preserve">
+          <source>In this level pack, a new</source>
+          <target state="translated">En este paquete de niveles, un nuevo</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorialStep4_Text1_Disabled" translate="yes" xml:space="preserve">
+          <source> disabled </source>
+          <target state="translated">deshabilitado</target>
+        </trans-unit>
+        <trans-unit id="Resx/GameTutorialStep4_Text1_Postfix" translate="yes" xml:space="preserve">
+          <source>block is introduced:</source>
+          <target state="translated">bloque es introducido:</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_FacebookLike_Name" translate="yes" xml:space="preserve">
+          <source>Supporter</source>
+          <target state="translated">Colaborador</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_FacebookLike_Description" translate="yes" xml:space="preserve">
+          <source>Like Invert it! on facebook through "about" page.</source>
+          <target state="translated">Dale me gusta a Invert it! en facebook a través de la página de "acerca de".</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_ShapesEasyFinished_Name" translate="yes" xml:space="preserve">
+          <source>Knight</source>
+          <target state="translated">Caballero</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_ShapesMediumFinished_Name" translate="yes" xml:space="preserve">
+          <source>Cavalier</source>
+          <target state="translated">Jinete</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_ShapesEasyFinished_Description" translate="yes" xml:space="preserve">
+          <source>Complete easy level group in Shapes pack.</source>
+          <target state="translated">Complete un nivel facíl en Shapes pack</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_ShapesMediumFinished_Decription" translate="yes" xml:space="preserve">
+          <source>Complete medium level group in Shapes pack.</source>
+          <target state="translated">Complete un medio en Shapes pack.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_ShapesHardFinished_Name" translate="yes" xml:space="preserve">
+          <source>Paladin</source>
+          <target state="translated">Paladín</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_ShapesHardFinished_Description" translate="yes" xml:space="preserve">
+          <source>Complete hard level group in Shapes pack.</source>
+          <target state="translated">Complete un nivel difícil en Shapes pack</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_RateApp_Name" translate="yes" xml:space="preserve">
+          <source>Reviewer</source>
+          <target state="translated">Crítico</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_RateApp_Description" translate="yes" xml:space="preserve">
+          <source>Rate Invert it! through "about" page.</source>
+          <target state="translated">Califica Invert it! a través de la página de "acerca de".</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_NoUndo_Name" translate="yes" xml:space="preserve">
+          <source>Infallible</source>
+          <target state="translated">Infalible</target>
+        </trans-unit>
+        <trans-unit id="Resx/AppResources.Achievement_NoUndo" translate="yes" xml:space="preserve">
+          <source>Perfectly finish a level in the ultra 9x9 hard group, not undoing any moves.</source>
+          <target state="translated">Completa perfectamente un nivel en grupo de niveles difíciles en 9x9 pack sin retirar ningún movimiento.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_Ultra9X9Finished_Description" translate="yes" xml:space="preserve">
+          <source>Finish 9x9 ultra pack.</source>
+          <target state="translated">Complete 9x9 ultra pack.</target>
+        </trans-unit>
+        <trans-unit id="Resx/AppResources.Achievement_Ultra9X9Finished_Name" translate="yes" xml:space="preserve">
+          <source>Almighty</source>
+          <target state="translated">Todopoderoso</target>
+        </trans-unit>
+        <trans-unit id="Resx/MainPage_RemoveAdsButtonText" translate="yes" xml:space="preserve">
+          <source>Remove ads</source>
+          <target state="translated">Elimina anuncios</target>
+        </trans-unit>
+        <trans-unit id="Resx/MainPage_RemoveAdsButtonDescription" translate="yes" xml:space="preserve">
+          <source>Play without ads! Help authors!</source>
+          <target state="translated">Juega sin anuncios! Ayuda a los autores!</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_RefreshHintsCountButton_CurrentHints" translate="yes" xml:space="preserve">
+          <source>hints</source>
+          <target state="translated">sugerencias</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_RefreshHintsCountButton_MoreHints" translate="yes" xml:space="preserve">
+          <source>more hints</source>
+          <target state="translated">más sugerencias</target>
+        </trans-unit>
+        <trans-unit id="Resx/PurchaseHintsPage.Title" translate="yes" xml:space="preserve">
+          <source>purchase hints</source>
+          <target state="translated">más sugerencias</target>
+        </trans-unit>
+        <trans-unit id="Resx/SuggestWithMessageBox_Caption" translate="yes" xml:space="preserve">
+          <source>Problem solving this level?</source>
+          <target state="translated">¿Tienes problema en pasar el nivel?</target>
+        </trans-unit>
+        <trans-unit id="Resx/SuggestWithMessageBox_Text" translate="yes" xml:space="preserve">
+          <source>Do You want to get some hints?</source>
+          <target state="translated">¿Desea obtener algunos consejos?</target>
+        </trans-unit>
+        <trans-unit id="Resx/PurchaseHintsPage_AdsHint" translate="yes" xml:space="preserve">
+          <source>Purchase any pack to remove ads!</source>
+          <target state="translated">Compra paquete para eliminar los anuncios</target>
+        </trans-unit>
+        <trans-unit id="Resx/StartAppEveryDayMessageDisplayer_Message" translate="yes" xml:space="preserve">
+          <source>Play Invert it! for {0} days in a row to unlock "Addicted" achievement and get {1} FREE hints!</source>
+          <target state="translated">Juega por {0} días seguidos para desbloquear el logro y recibir {1} sugenercias GRATIS</target>
+        </trans-unit>
+        <trans-unit id="Resx/StartAppEveryDayMessageDisplayer_Caption" translate="yes" xml:space="preserve">
+          <source>GET ADDICTED!</source>
+          <target state="translated">¡DEJATE LEVAR!</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_PlayEveryDay_Description" translate="yes" xml:space="preserve">
+          <source>Play for {0} days in a row. Receive {1} FREE hints!</source>
+          <target state="translated">Juega por {0} días seguidos para recibir {1} sugerencias gratis.</target>
+        </trans-unit>
+        <trans-unit id="Resx/Achievement_PlayEveryDay_Name" translate="yes" xml:space="preserve">
+          <source>Addicted</source>
+          <target state="translated">Adicto</target>
+        </trans-unit>
+        <trans-unit id="Resx/GamePage_AppBar_PurchaseHints" translate="yes" xml:space="preserve">
+          <source>purchase hints</source>
+          <target state="translated">más sugerencias</target>
+        </trans-unit>
+        <trans-unit id="Resx/PuchaseHints_HintsCount_Description2" translate="yes" xml:space="preserve">
+          <source> hints</source>
+          <target state="translated"> sugerencias</target>
+        </trans-unit>
+        <trans-unit id="Resx/PuchaseHints_HintsCount_Description1" translate="yes" xml:space="preserve">
+          <source>You have </source>
+          <target state="translated">Tiene </target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

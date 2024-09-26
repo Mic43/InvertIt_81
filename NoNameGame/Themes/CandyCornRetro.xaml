@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="CheckedAreaColor">#F0C018</Color>
+    <Color x:Key="UnCheckedAreaColor">#90A830</Color>
+    <Color x:Key="ThirdAreaColor">#437019</Color>
+
+    <SolidColorBrush x:Key="CheckedAreaGradientBrush" Color="{StaticResource CheckedAreaColor}" />
+    <SolidColorBrush x:Key="UnCheckedAreaGradientBrush" Color="{StaticResource UnCheckedAreaColor}" />
+    <SolidColorBrush x:Key="OverlayGradientBlue" Color="{StaticResource CheckedAreaColor}" />
+    <SolidColorBrush x:Key="OverlayGradientRed" Color="{StaticResource UnCheckedAreaColor}" />
+    <SolidColorBrush x:Key="OverlayGradientGreen" Color="{StaticResource UnCheckedAreaColor}" />
+
+</ResourceDictionary>

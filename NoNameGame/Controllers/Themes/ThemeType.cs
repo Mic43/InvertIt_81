@@ -1,0 +1,33 @@
+﻿namespace NoNameGame.Controllers.Themes
+{
+    public enum ThemeType
+    {
+        BlueRed,
+        GreenOrange,
+        Teal,
+        FlatPink,
+        Pink,
+        FlatMauve,
+        FlatAmber,        
+        FlatLime,
+        Steel,
+        FlatSpike,
+        RetroCopper,
+        RetroKoi,
+        RetroGroove,
+        RetroBartman,        
+        New,
+        RetroTriste,
+        Humano,
+        Alizarin,
+        YoungAlice,
+        Peach,
+        Lipstick,
+        Alien,
+        Desiderata,
+        Cobalt,
+        Sky,
+        Nature,
+        Yellow
+    }
+}

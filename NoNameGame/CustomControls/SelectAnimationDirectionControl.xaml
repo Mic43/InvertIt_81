@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="NoNameGame.CustomControls.SelectAnimationDirectionControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:attachedProperties="clr-namespace:NoNameGame.CustomControls.AttachedProperties"
+             xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+             xmlns:clickSound="clr-namespace:NoNameGame.CustomControls.ClickSound"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}"
+             d:DesignHeight="480"
+             d:DesignWidth="480"
+             mc:Ignorable="d">
+
+    <ListBox x:Name="ListBoxThemes"
+             HorizontalContentAlignment="Stretch"
+             ItemContainerStyle="{StaticResource ListBoxItemDynamicThemes}"
+             ItemsSource="{Binding Path=AnimationDirections}"
+             SelectedItem="{Binding Path=SelectedAnimationDirection,
+                                    Mode=TwoWay}"
+             SelectionChanged="ListBoxThemes_OnSelectionChanged">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <clickSound:ClickSoundContentControl HorizontalAlignment="Stretch"
+                                                         HorizontalContentAlignment="Stretch"
+                                                         Style="{StaticResource ClickSoundStyle}">
+                    <Grid Margin="0,5,0,5" Background="Transparent">
+                        <Grid HorizontalAlignment="Stretch"
+                              VerticalAlignment="Center"
+                              Visibility="{Binding IsLocked,
+                                                   Converter={StaticResource BoolToVisibilityConverter}}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+
+                            <Image x:Name="Image"
+                                   Grid.Row="0"
+                                   Grid.Column="0"
+                                   Width="25"
+                                   Height="25"
+                                   HorizontalAlignment="Left"
+                                   Source="/Assets/lock.png"
+                                   Stretch="Uniform" />
+
+                            <StackPanel Grid.Column="1"
+                                        Margin="10,0,0,0"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Orientation="Horizontal">
+                                <TextBlock Margin="0,2,0,0"
+                                           VerticalAlignment="Center"
+                                           FontSize="22"
+                                           Foreground="{StaticResource PhoneForegroundBrush}"
+                                           Text="{Binding UnlockConditionDescription}" />
+                                <!--  <customControls:StarsControl Height="25"  -->
+                                <!--  Margin="0,0,10,0"  -->
+                                <!--  VerticalAlignment="Center"  -->
+                                <!--  ShowAnimation="True"  -->
+                                <!--  StarsCount="1" />  -->
+                            </StackPanel>
+                        </Grid>
+                        <Grid HorizontalAlignment="Stretch"
+                              VerticalAlignment="Center"
+                              Visibility="{Binding IsAvailable,
+                                                   Converter={StaticResource BoolToVisibilityConverter}}">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       FontSize="28"
+                                       Text="{Binding Name}"
+                                       toolkit:SlideInEffect.LineIndex="1" />
+
+                        </Grid>
+                    </Grid>
+                </clickSound:ClickSoundContentControl>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
+</UserControl>

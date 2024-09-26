@@ -1,0 +1,122 @@
+﻿<UserControl x:Class="NoNameGame.CustomControls.Levels.SelectLevelControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:NoNameGame.CustomControls.AttachedProperties"
+             xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:levels="clr-namespace:NoNameGame.CustomControls.Levels"
+             xmlns:longList="clr-namespace:NoNameGame.Helpers.LongList"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+             xmlns:stats="clr-namespace:NoNameGame.CustomControls.Stats"
+             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}"
+             d:DesignHeight="480"
+             d:DesignWidth="480"
+             mc:Ignorable="d">
+
+    <!--  <ItemsControl Name="ListSelector" ItemsSource="{Binding AllLevels}">  -->
+    <!--  <ItemsControl.ItemsPanel>  -->
+    <!--  <ItemsPanelTemplate>  -->
+    <!--  <VirtualizingStackPanel />  -->
+    <!--  </ItemsPanelTemplate>  -->
+    <!--  </ItemsControl.ItemsPanel>  -->
+    <!--  <ItemsControl.Template>  -->
+    <!--  <ControlTemplate TargetType="ItemsControl">  -->
+    <!--  <ScrollViewer>  -->
+    <!--  <ItemsPresenter />  -->
+    <!--  </ScrollViewer>  -->
+    <!--  </ControlTemplate>  -->
+    <!--  </ItemsControl.Template>  -->
+    <!--  <ItemsControl.ItemTemplate>  -->
+    <!--  <DataTemplate>  -->
+    <!--  <levels:SelectLevelItem Width="110"  -->
+    <!--  Height="110"  -->
+    <!--  Margin="50,10,50,10"  -->
+    <!--  Background="{Binding ElementName=ListSelector,  -->
+    <!--  Path=(controls:ThemeMainColorExtension.ThemeMainBrush)}"  -->
+    <!--  IsAvailable="{Binding Path=IsAvailable}"  -->
+    <!--  IsEnabled="{Binding Path=IsAvailable}"  -->
+    <!--  StarsCount="{Binding Path=Stars}"  -->
+    <!--  Text="{Binding Path=Id}" />  -->
+    <!--  </DataTemplate>  -->
+    <!--  </ItemsControl.ItemTemplate>  -->
+    <!--  </ItemsControl>  -->
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <stats:StarsProgressBar x:Name="StarsProgressBar"
+                                Margin="12,0,60,12"
+                                HorizontalAlignment="Stretch"
+                                CacheMode="BitmapCache" />
+        <phone:LongListSelector Name="ListSelector"
+                                Grid.Row="1"
+                                GridCellSize="100, 100"
+                                IsGroupingEnabled="False"
+                                ItemsSource="{Binding Levels}"
+                                LayoutMode="Grid"
+                                SelectionChanged="ListSelector_OnSelectionChanged">
+
+
+            <phone:LongListSelector.ItemTemplate>
+                <DataTemplate>
+                    <levels:SelectLevelItem Margin="12,12,12,12"
+                                            Background="{Binding ElementName=ListSelector,
+                                                                 Path=(controls:ThemeMainColorExtension.ThemeMainBrush)}"
+                                            IsAvailable="{Binding Path=IsAvailable}"
+                                            IsEnabled="{Binding Path=IsAvailable}"
+                                            PlayAnimation="{Binding Path=PlayAnimation}"
+                                            StarsCount="{Binding Path=Stars}"
+                                            Text="{Binding Path=DisplayName}" />
+                </DataTemplate>
+            </phone:LongListSelector.ItemTemplate>
+
+        </phone:LongListSelector>
+    </Grid>
+    <!--  ~1~  <Grid>  @1@  -->
+    <!--  ~1~  <Grid.ColumnDefinitions>  @1@  -->
+    <!--  ~1~  <ColumnDefinition />  @1@  -->
+    <!--  ~1~  <ColumnDefinition />  @1@  -->
+    <!--  ~1~  <ColumnDefinition />  @1@  -->
+    <!--  ~1~  </Grid.ColumnDefinitions>  @1@  -->
+    <!--    -->
+    <!--  ~1~  <levels:SelectLevelItem Margin="10,10,10,10" Width="400" Height="400"  @1@  -->
+    <!--  ~1~  Background="{Binding ElementName=ListSelector,  @1@  -->
+    <!--  ~1~  Path=(controls:ThemeMainColorExtension.ThemeMainBrush)}"  @1@  -->
+    <!--  ~1~  IsAvailable="{Binding Path=[0].IsAvailable}"  @1@  -->
+    <!--  ~1~  IsEnabled="{Binding Path=[0].IsAvailable}"  @1@  -->
+    <!--  ~1~  StarsCount="{Binding Path=[0].Stars}"  @1@  -->
+    <!--  ~1~  Text="{Binding Path=[0].Id}" />  @1@  -->
+    <!--  ~1~  <levels:SelectLevelItem Grid.Column="1" Width="400" Height="400"  @1@  -->
+    <!--  ~1~  Margin="10,10,10,10"  @1@  -->
+    <!--  ~1~  Background="{Binding ElementName=ListSelector,  @1@  -->
+    <!--  ~1~  Path=(controls:ThemeMainColorExtension.ThemeMainBrush)}"  @1@  -->
+    <!--  ~1~  IsAvailable="{Binding Path=[1].IsAvailable}"  @1@  -->
+    <!--  ~1~  IsEnabled="{Binding Path=[1].IsAvailable}"  @1@  -->
+    <!--  ~1~  StarsCount="{Binding Path=[1].Stars}"  @1@  -->
+    <!--  ~1~  Text="{Binding Path=[1].Id}" />  @1@  -->
+    <!--  ~1~  <levels:SelectLevelItem Grid.Column="2"  @1@  -->
+    <!--  ~1~  Margin="10,10,10,10"  @1@  -->
+    <!--  ~1~  Background="{Binding ElementName=ListSelector,  @1@  -->
+    <!--  ~1~  Path=(controls:ThemeMainColorExtension.ThemeMainBrush)}"  @1@  -->
+    <!--  ~1~  IsAvailable="{Binding Path=[2].IsAvailable}"  @1@  -->
+    <!--  ~1~  IsEnabled="{Binding Path=[2].IsAvailable}"  @1@  -->
+    <!--  ~1~  StarsCount="{Binding Path=[2].Stars}"  @1@  -->
+    <!--  ~1~  Text="{Binding Path=[2].Id}" />  @1@  -->
+    <!--    -->
+    <!--  ~1~  </Grid>  @1@  -->
+    <!--  </DataTemplate>  -->
+    <!--  </phone:LongListSelector.ItemTemplate>  -->
+    <!--  ~1~  <i:Interaction.Behaviors>  @1@  -->
+    <!--  ~1~  <longList:LLSIncrementalLoadingBehavior RequestMoreData="{Binding Command}" Threshold="0.99" />  @1@  -->
+    <!--  ~1~  </i:Interaction.Behaviors>  @1@  -->
+    <!--    -->
+    <!--  </phone:LongListSelector>  -->
+
+</UserControl>

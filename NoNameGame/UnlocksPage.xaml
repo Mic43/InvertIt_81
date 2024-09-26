@@ -1,0 +1,115 @@
+﻿<noNameGame:BasePage x:Class="NoNameGame.UnlocksPage"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:customControls="clr-namespace:NoNameGame.CustomControls"
+                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                     xmlns:noNameGame="clr-namespace:NoNameGame"
+                     xmlns:overlayAnimatedBackground="clr-namespace:NoNameGame.CustomControls.OverlayAnimatedBackground"
+                     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                     xmlns:stats="clr-namespace:NoNameGame.CustomControls.Stats"
+                     xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+                     xmlns:challenges="clr-namespace:NoNameGame.CustomControls.Challenges"
+                     FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                     FontSize="{StaticResource PhoneFontSizeNormal}"
+                     Foreground="{StaticResource PhoneForegroundBrush}"
+                     Loaded="UnlocksPage_OnLoaded"
+                     Orientation="Portrait"
+                     SupportedOrientations="Portrait"
+                     shell:SystemTray.IsVisible="False"
+                     toolkit:TiltEffect.IsTiltEnabled="True"
+                     mc:Ignorable="d">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardIn" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileFeatherTransition Mode="ForwardIn" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileFeatherTransition Mode="BackwardOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileFeatherTransition Mode="ForwardOut" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <Grid>
+        <overlayAnimatedBackground:OverlayAnimatedBackgroundControl x:Name="Overlay" />
+        <Grid x:Name="LayoutRoot" Canvas.ZIndex="1000">
+            <toolkit:GestureService.GestureListener>
+                <toolkit:GestureListener Flick="GestureListener_OnFlick" />
+            </toolkit:GestureService.GestureListener>
+            <Grid.Background>
+                <SolidColorBrush Color="{StaticResource OverlayColor}" />
+            </Grid.Background>
+            <phone:Pivot Name="MainPivot"
+                         Title="{Binding Path=LocalizedResources.UnlocksPage_Title,
+                                         Source={StaticResource LocalizedStrings}}"
+                         SelectionChanged="Pivot_OnSelectionChanged"
+                         Style="{StaticResource CustomPivotStyle}"
+                         toolkit:TurnstileFeatherEffect.FeatheringIndex="0">
+                <phone:PivotItem Header="{Binding Path=LocalizedResources.ThemesPivotItem_Title, Source={StaticResource LocalizedStrings}}">
+                    <Grid Margin="0,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Vertical">
+                            <!--  <TextBlock Margin="12,0,12,0"  -->
+                            <!--  HorizontalAlignment="Left"  -->
+                            <!--  Style="{StaticResource PhoneTextSubtleStyle}"  -->
+                            <!--  Text="{Binding Path=LocalizedResources.ThemesPage_Description,  -->
+                            <!--  Source={StaticResource LocalizedStrings}}"  -->
+                            <!--  TextAlignment="Left"  -->
+                            <!--  toolkit:TurnstileFeatherEffect.FeatheringIndex="1" />  -->
+                            <TextBlock HorizontalAlignment="Center"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="{StaticResource PhoneSubtleBrush}"
+                                       Text="You have "
+                                       toolkit:TurnstileFeatherEffect.FeatheringIndex="1" />
+                            <stats:StarsSummaryControl Name="StarsSummary"
+                                                       HorizontalAlignment="Center"
+                                                       toolkit:TurnstileFeatherEffect.FeatheringIndex="1" />
+                        </StackPanel>
+                        <customControls:SelectThemeControl x:Name="SelectThemeControl"
+                                                           Grid.Row="1"
+                                                           Margin="0,12,0,0"
+                                                           ThemeChanged="SelectThemeControl_OnThemeChanged"
+                                                           toolkit:TurnstileFeatherEffect.FeatheringIndex="2" />
+                    </Grid>
+                </phone:PivotItem>
+
+                <phone:PivotItem Header="{Binding Path=LocalizedResources.AnimationsPivotItem_Title, Source={StaticResource LocalizedStrings}}">
+                    <Grid Margin="12,0,0,12" toolkit:TurnstileFeatherEffect.FeatheringIndex="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0"
+                                   Margin="0,0,0,0"
+                                   HorizontalAlignment="Left"
+                                   Style="{StaticResource PhoneTextSubtleStyle}"
+                                   Text="{Binding Path=LocalizedResources.AnimationsPage_Description,
+                                                  Source={StaticResource LocalizedStrings}}"
+                                   TextAlignment="Left"
+                                   toolkit:TurnstileFeatherEffect.FeatheringIndex="4" />
+                        <customControls:SelectAnimationDirectionControl x:Name="SelectAnimationDirectionControl"
+                                                                        Grid.Row="1"
+                                                                        Margin="0,12,0,0"
+                                                                        AnimationDirectionChanged="SelectAnimationDirectionControl_OnAnimationDirectionChanged" />
+                    </Grid>
+                </phone:PivotItem>
+            </phone:Pivot>
+        </Grid>
+    </Grid>
+
+</noNameGame:BasePage>
