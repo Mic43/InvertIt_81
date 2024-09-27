@@ -1,5 +1,5 @@
 # InvertIt
-Windows phone puzzle mobile game, with backend support of daily puzzle challanges, global user stats, achievement system, hand crafted animation system and themes support.
+Windows phone puzzle mobile game, with backend support (hosted on Azure) of daily puzzle challanges, global user stats, achievement system, hand crafted animation system and themes support.
 
 ![Promo](Store/promo.png)
 
